@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 구글 번역 안켜지게 -->
+<meta name="google" content="notranslate">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!-- icon -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
+<!-- css/js -->
+<link rel="stylesheet" href="make-a-lotto.css" />
+<script src="make-a-lotto.js"></script>
+
+<title>MAKE A LOTTO</title>
+</head>
+
+<body class="app">
+<div class="apps main">
+<!-- 헤더 start -->
+	<header>
+		<div class="flex flex-align-center flex-justify-between">
+			<h1><a href="javascript:location.reload()">&ensp;MAKE A LOTTO.</a></h1>
+			<div class="right-wrap flex flex-align-center">
+				<select id="select_gm" onchange="fn_change()" style="width: 270px; height: 65px; font-size: 20px; font-weight: bold;">
+					<option value="1">1 GAME (￦ 1,000)</option>
+					<option value="2">2 GAME (￦ 2,000)</option>
+					<option value="3">3 GAME (￦ 3,000)</option>
+					<option value="4">4 GAME (￦ 4,000)</option>
+					<option value="5">5 GAME (￦ 5,000)</option>
+				</select>
+			</div>
+		</div>
+	</header>	
+<!-- 헤더 end -->	
+
+<!-- 바디 부분 start -->
+<!-- 로또 제일 위 -->
+	<div class="container pt200" align="center">
+		<table>
+			<colgroup>
+				<col width="*">
+				<col width="780px">
+				<col width="*">
+			</colgroup>
+			<tbody class="center">
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				<tr>
+					<td></td>
+					<td align="left">
+						<div class="lotto_ball" id="ball_1">L</div>
+						<div class="lotto_ball" id="ball_2">O</div>
+						<div class="lotto_ball" id="ball_3">T</div>
+						<div class="lotto_ball" id="ball_4">T</div>
+						<div class="lotto_ball" id="ball_5">O</div>
+						<div class="lotto_ball" id="ball_6"><i class="fas fa-fire"></i></div>
+					</td>
+					<td></td>
+				</tr>
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+			</tbody>
+		</table>
+	</div>
+
+<!-- 로또 선택 버튼 및 기타 버튼 -->
+<div class="container pt30">
+		<div style="width: 100%; text-align: center;">
+			<br><br>
+			<h1 id="ment">아래 버튼을 눌러 번호를 생성하세요!</h1>
+			<br><br>
+			<button type="button" id="btn_1" class="btn" onclick="fn_lotto()" style="height: 70px; width: 360px; font-size: 23px; font-weight: bold;">번호 생성 하기 </button>
+		</div>
+		<div style="width: 100%; text-align: center;">
+			<br>
+			<button type="button" id="btn_1" class="btn btn-black"	onclick="fn_myNum()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">고정 번호</button>
+			<button type="button" id="btn_2" class="btn btn-cancel"	onclick="fn_notNum()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">제외 번호</button>
+			<br><br>
+			<a href="#" onclick="javascript:location.reload()" class="mt30" style="font-size: 40px; color: gray; font-weight: bold;">RESET <i class="fas fa-sync"></i></a>
+		</div>
+		<div style="width: 100%; text-align: center;" id="myNumDiv">
+		</div>
+		<div style="width: 100%; text-align: center;" id="notNumDiv">
+		</div>
+		
+<!-- 로또 번호 테이블 -->
+<div class="container mt100" align="center">
+		<div class="list-table" id="tableDIV">
+				<table class="member" style="width: 800px;">
+					<colgroup>
+						<col width="150px">
+						<col width="*">
+					</colgroup>
+					<thead>
+						<tr style="height: 60px; text-align: center; font-weight: bold; font-size: 25px;">
+							<th>게임 번호</th>
+							<th>나의 추첨번호</th>
+						</tr>
+					</thead>
+					<tbody class="center" id="tableBody">
+						<tr style="text-align: center;">
+							<td colspan="2" style="font-weight: bold; font-size: 25px;">번호 생성 하기 버튼을 눌러주세요!!</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+</div>	
+
+<!-- POP UP START -->
+
+<!-- 고정번호 선택 pop -->
+<div class="modal llg" id="myNumPop">
+	<div class="modal-box">
+		<div class="modal-wrap">
+			<div class="flex flex-justify-end"></div>
+			<div class="modal-title">고정번호 선택</div>
+			
+			<div class="modal-cont">
+			
+			<div class="cbdiv">
+					<p style="font-size: 17px; color: red;">※ 번호 생성시 고정되어 있을 숫자 선택<br>(5개까지만 선택가능)</p><br>
+					<label><input type="checkbox" name="cb" id="cb1" value="1"/>1</label>
+					<label><input type="checkbox" name="cb" id="cb2" value="2"/>2</label>
+					<label><input type="checkbox" name="cb" id="cb3" value="3"/>3</label>
+					<label><input type="checkbox" name="cb" id="cb4" value="4"/>4</label>
+					<label><input type="checkbox" name="cb" id="cb5" value="5"/>5</label>
+					<label><input type="checkbox" name="cb" id="cb6" value="6"/>6</label>
+					<label><input type="checkbox" name="cb" id="cb7" value="7"/>7</label>
+					<label><input type="checkbox" name="cb" id="cb8" value="8"/>8</label>
+					<label><input type="checkbox" name="cb" id="cb9" value="9"/>9</label>
+					<label><input type="checkbox" name="cb" id="cb10" value="10"/>10</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="cb" id="cb11" value="11"/>11</label>
+					<label><input type="checkbox" name="cb" id="cb12" value="12"/>12</label>
+					<label><input type="checkbox" name="cb" id="cb13" value="13"/>13</label>
+					<label><input type="checkbox" name="cb" id="cb14" value="14"/>14</label>
+					<label><input type="checkbox" name="cb" id="cb15" value="15"/>15</label>
+					<label><input type="checkbox" name="cb" id="cb16" value="16"/>16</label>
+					<label><input type="checkbox" name="cb" id="cb17" value="17"/>17</label>
+					<label><input type="checkbox" name="cb" id="cb18" value="18"/>18</label>
+					<label><input type="checkbox" name="cb" id="cb19" value="19"/>19</label>
+					<label><input type="checkbox" name="cb" id="cb20" value="20"/>20</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="cb" id="cb21" value="21"/>21</label>
+					<label><input type="checkbox" name="cb" id="cb22" value="22"/>22</label>
+					<label><input type="checkbox" name="cb" id="cb23" value="23"/>23</label>
+					<label><input type="checkbox" name="cb" id="cb24" value="24"/>24</label>
+					<label><input type="checkbox" name="cb" id="cb25" value="25"/>25</label>
+					<label><input type="checkbox" name="cb" id="cb26" value="26"/>26</label>
+					<label><input type="checkbox" name="cb" id="cb27" value="27"/>27</label>
+					<label><input type="checkbox" name="cb" id="cb28" value="28"/>28</label>
+					<label><input type="checkbox" name="cb" id="cb29" value="29"/>29</label>
+					<label><input type="checkbox" name="cb" id="cb30" value="30"/>30</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="cb" id="cb31" value="31"/>31</label>
+					<label><input type="checkbox" name="cb" id="cb32" value="32"/>32</label>
+					<label><input type="checkbox" name="cb" id="cb33" value="33"/>33</label>
+					<label><input type="checkbox" name="cb" id="cb34" value="34"/>34</label>
+					<label><input type="checkbox" name="cb" id="cb35" value="35"/>35</label>
+					<label><input type="checkbox" name="cb" id="cb36" value="36"/>36</label>
+					<label><input type="checkbox" name="cb" id="cb37" value="37"/>37</label>
+					<label><input type="checkbox" name="cb" id="cb38" value="38"/>38</label>
+					<label><input type="checkbox" name="cb" id="cb39" value="39"/>39</label>
+					<label><input type="checkbox" name="cb" id="cb40" value="40"/>40</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="cb" id="cb41" value="41"/>41</label>
+					<label><input type="checkbox" name="cb" id="cb42" value="42"/>42</label>
+					<label><input type="checkbox" name="cb" id="cb43" value="43"/>43</label>
+					<label><input type="checkbox" name="cb" id="cb44" value="44"/>44</label>
+					<label><input type="checkbox" name="cb" id="cb45" value="45"/>45</label>
+				</div>
+	
+			</div>
+		   <div class="modal-btn-wrap btn-group">
+              <button class="btn" onclick="fn_ok()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
+              <button class="btn btn-cancel" onclick="fn_cancel()" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
+          </div>
+		</div>
+		<div class="dim"></div>
+	</div>
+</div>
+
+		
+<!-- 제외번호 선택 pop -->
+<div class="modal llg" id="notNumPop">
+	<div class="modal-box">
+		<div class="modal-wrap">
+			<div class="flex flex-justify-end"></div>
+			<div class="modal-title">제외번호 선택</div>
+			<div class="modal-cont">
+				<div class="cbdiv">
+					<p style="font-size: 17px; color: red;">※ 번호 생성시 제외할 숫자 선택<br>(20개까지만 선택가능)</p><br>
+					<label><input type="checkbox" name="nb" id="nb1" value="1"/>1</label>
+					<label><input type="checkbox" name="nb" id="nb2" value="2"/>2</label>
+					<label><input type="checkbox" name="nb" id="nb3" value="3"/>3</label>
+					<label><input type="checkbox" name="nb" id="nb4" value="4"/>4</label>
+					<label><input type="checkbox" name="nb" id="nb5" value="5"/>5</label>
+					<label><input type="checkbox" name="nb" id="nb6" value="6"/>6</label>
+					<label><input type="checkbox" name="nb" id="nb7" value="7"/>7</label>
+					<label><input type="checkbox" name="nb" id="nb8" value="8"/>8</label>
+					<label><input type="checkbox" name="nb" id="nb9" value="9"/>9</label>
+					<label><input type="checkbox" name="nb" id="nb10" value="10"/>10</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="nb" id="nb11" value="11"/>11</label>
+					<label><input type="checkbox" name="nb" id="nb12" value="12"/>12</label>
+					<label><input type="checkbox" name="nb" id="nb13" value="13"/>13</label>
+					<label><input type="checkbox" name="nb" id="nb14"  value="14"/>14</label>
+					<label><input type="checkbox" name="nb" id="nb15" value="15"/>15</label>
+					<label><input type="checkbox" name="nb" id="nb16" value="16"/>16</label>
+					<label><input type="checkbox" name="nb" id="nb17" value="17"/>17</label>
+					<label><input type="checkbox" name="nb" id="nb18" value="18"/>18</label>
+					<label><input type="checkbox" name="nb" id="nb19" value="19"/>19</label>
+					<label><input type="checkbox" name="nb" id="nb20" value="20"/>20</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="nb" id="nb21" value="21"/>21</label>
+					<label><input type="checkbox" name="nb" id="nb22" value="22"/>22</label>
+					<label><input type="checkbox" name="nb" id="nb23" value="23"/>23</label>
+					<label><input type="checkbox" name="nb" id="nb24" value="24"/>24</label>
+					<label><input type="checkbox" name="nb" id="nb25" value="25"/>25</label>
+					<label><input type="checkbox" name="nb" id="nb26" value="26"/>26</label>
+					<label><input type="checkbox" name="nb" id="nb27" value="27"/>27</label>
+					<label><input type="checkbox" name="nb" id="nb28" value="28"/>28</label>
+					<label><input type="checkbox" name="nb" id="nb29" value="29"/>29</label>
+					<label><input type="checkbox" name="nb" id="nb30" value="30"/>30</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="nb" id="nb31" value="31"/>31</label>
+					<label><input type="checkbox" name="nb" id="nb32" value="32"/>32</label>
+					<label><input type="checkbox" name="nb" id="nb33" value="33"/>33</label>
+					<label><input type="checkbox" name="nb" id="nb34" value="34"/>34</label>
+					<label><input type="checkbox" name="nb" id="nb35" value="35"/>35</label>
+					<label><input type="checkbox" name="nb" id="nb36" value="36"/>36</label>
+					<label><input type="checkbox" name="nb" id="nb37" value="37"/>37</label>
+					<label><input type="checkbox" name="nb" id="nb38" value="38"/>38</label>
+					<label><input type="checkbox" name="nb" id="nb39" value="39"/>39</label>
+					<label><input type="checkbox" name="nb" id="nb40" value="40"/>40</label>
+				</div>
+				<div class="cbdiv">
+					<label><input type="checkbox" name="nb" id="nb41" value="41"/>41</label>
+					<label><input type="checkbox" name="nb" id="nb42" value="42"/>42</label>
+					<label><input type="checkbox" name="nb" id="nb43" value="43"/>43</label>
+					<label><input type="checkbox" name="nb" id="nb44" value="44"/>44</label>
+					<label><input type="checkbox" name="nb" id="nb45" value="45"/>45</label>
+				</div>
+			</div>
+			<div class="modal-btn-wrap btn-group">
+              <button class="btn" onclick="fn_notNum_ok()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
+              <button class="btn btn-cancel" onclick="fn_notNum_cancel();" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
+          </div>
+		</div>
+		<div class="dim"></div>
+	</div>
+</div>
+
+<!-- 번호 선택 pop -->
+<div class="modal lg" id="selectLotto">
+	<div class="modal-box">
+		<div class="modal-wrap">
+		 <div class="flex flex-justify-end"></div>
+         <div class="modal-title">LOTTO 번호 선택</div>
+		<div class="modal-cont">
+			<div id="print">
+			<div align="center">
+				<p id="todayP"></p>
+				<p id="lottery"></p>
+				<p id="lastDay"></p>
+			</div>
+			
+			<div style="margin-top: 60px;">
+				<table>
+					<colgroup>
+						<col width="100px">
+						<col width="*">
+						<col width="450px">
+						<col width="*">
+					</colgroup>
+					<tbody class="center" id="tableBody2">
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+			<div align="right">
+				<br><br>
+				<p id="howMuch"></p>
+				</div>
+			</div>
+		</div>
+		   <div class="modal-btn-wrap btn-group">
+              <button class="btn" onclick="fn_close()" style="height: 65px; font-size: 23px; font-weight: bold;">확인</button>
+              <button class="btn btn-black" onclick="printDiv()" style="height: 65px; font-size: 23px; font-weight: bold;">출력</button>
+          </div>
+		</div>
+		 	<div class="dim"></div>
+	</div>	
+</div>
+<!-- POP UP END -->
+
+<!-- footer -->
+<nav>	
+	<div class="navigation">
+		<ul>
+			<li class="one-depth"><a href="mailto:kyung_za@naver.com"><i class="fas fa-question-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">문의사항</span></a></li>
+			<li class="one-depth"><a href="mailto:kyung_za@naver.com"><i class="fas fa-exclamation-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">오류신고</span></a></li>
+			<li class="one-depth"><a href="https://www.youtube.com/watch?v=6Pxf6H36S94"><i class="fas fa-times-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">불만사항</span></a></li>
+			<li class="one-depth"><a href="https://www.dhlottery.co.kr/"><i class="fas fa-play-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">동행복권 홈페이지</span></a></li>
+		</ul>
+		<p class="mt5" align="right" style="font-size: 10px;">COPYRIGHT © 2021 Park Kyung Min. ALL RIGHT RESERVED</p>
+	</div>
+</nav>
+
+</div>
+</div>
+</body>
+</html>
+
+
+
