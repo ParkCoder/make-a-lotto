@@ -345,215 +345,11 @@
 
 /* line 290, src/assets/style/base/_common.scss */ .app input, .app textarea, .app select { padding: 13px 20px; }
 
-/* line 2, src/assets/style/base/_jquery-reset.scss */ .ui-state-active .ui-icon, .ui-button:active .ui-icon { background-image: none; }
-
-/* line 5, src/assets/style/base/_jquery-reset.scss */ .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight { border: 0; background-color: transparent; }
-
-/* line 9, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content { border: none; padding: 0; }
-
-/* line 12, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker { width: 282px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15); }
-
-/* line 18, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker select.ui-datepicker-year, .ui-widget.ui-widget-content.ui-datepicker select.ui-datepicker-month { background-image: unset; border: none; padding: 0; }
-
-/* line 24, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker select.ui-datepicker-year { direction: rtl; }
-
-/* line 27, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header { margin-bottom: 15px; padding: 0; border: 0; border-radius: 0; background: #FFF; }
-
-/* line 33, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-title { font-size: 14px; font-family: "NotoSansKR-Bold"; }
-
-/* line 37, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-prev, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-next { top: 50%; transform: translateY(-50%); width: 22px; height: 22px; cursor: pointer; }
-
-/* line 44, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-prev span, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-next span { position: static; width: 100%; height: 100%; margin: 0; }
-
-/* line 51, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-prev { left: 0; }
-
-/* line 53, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-prev span { background: url("../images/icon-arrow.png") no-repeat center/100%; transform: rotate(180deg); }
-
-/* line 58, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-next { right: 0; }
-
-/* line 60, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .ui-datepicker-next span { background: url("../images/icon-arrow.png") no-repeat center/100%; }
-
-/* line 65, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-header .mtz-monthpicker-year { border: none; margin-left: 20px; padding-right: 20px; background: #fff url(/static/images/arrow-down.png) no-repeat right center; background-size: 20px; }
-
-/* line 73, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .mtz-monthpicker-month { border: none; padding: 10px 5px; background: transparent; }
-
-/* line 77, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .mtz-monthpicker-month.ui-state-active { border-radius: 3px; background-color: #283541; color: #fff; }
-
-/* line 83, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar { font-size: 14px; border: none; }
-
-/* line 86, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar th { font-size: 10px; color: #666; background-color: #FFFFFF; background-repeat: no-repeat; background-position: center; background-size: auto; }
-
-/* line 91, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar th, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar td { width: 36px; height: 36px; padding: 0; vertical-align: middle; }
-
-/* line 96, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar th a, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar td a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin: 0 auto; padding: 0; border: none; border-radius: 8px; background: #fff; text-align: center; }
-
-/* line 108, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar th a.ui-state-active, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar td a.ui-state-active { background-color: #fff; color: #454545; }
-
-/* line 112, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar th a.ui-state-highlight, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar td a.ui-state-highlight { background-color: #F9F9F9; color: #50A6FF; }
-
-/* line 117, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar th .ui-state-default, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-calendar td .ui-state-default { border: none; text-align: center; }
-
-/* line 123, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-week-end:first-child, .ui-widget.ui-widget-content.ui-datepicker .ui-datepicker-week-end:first-child a { color: #F35B5B; }
-
-/* line 128, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs { border: none; background-color: transparent; }
-
-/* line 131, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-widget-header { background-color: transparent; }
-
-/* line 134, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav { padding: 0; border: none; }
-
-/* line 137, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default { border: none; background-color: #f1f1f1; outline: none; margin: 0 10px 0 0; }
-
-/* line 142, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default .ui-tabs-anchor { padding: 16px 32px; font-family: "NotoSansKR-Bold"; }
-
-/* line 146, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default.icon { position: relative; }
-
-/* line 149, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default.icon.ui-state-active .ui-tabs-anchor { border: 1px solid #50A6FF; padding: 15px 31px 15px 31px; background-color: #F9FDFF; }
-
-/* line 155, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default.icon .ui-tabs-anchor { display: flex; align-items: center; justify-content: center; padding-left: 32px; border-radius: 4px; }
-
-/* line 161, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default.icon .ui-tabs-anchor:before { margin-right: 5px; }
-
-/* line 165, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default.icon .btn-more { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 24px; height: 24px; background: url("/static/images/icon-plus-g.png") no-repeat center; background-size: cover; }
-
-/* line 176, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default a, .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default a:link, .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-default a:visited { color: #aaa; }
-
-/* line 182, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-active { background-color: #fff; }
-
-/* line 184, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-active a, .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-active a:link, .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-active a:visited { color: #50A6FF; }
-
-/* line 189, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-nav .ui-state-active.icon .btn-more { background: url("/static/images/icon-plus.png") no-repeat center; background-size: cover; }
-
-/* line 195, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs .ui-tabs-panel { padding: 30px 20px; border-radius: 0 5px 5px 5px; }
-
-/* line 201, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs.line-tab .ui-tabs-nav .ui-tabs-anchor { padding: 10px 34px; }
-
-/* line 204, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs.line-tab .ui-tabs-nav .ui-state-default { background-color: transparent; padding-bottom: 0; }
-
-/* line 207, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs.line-tab .ui-tabs-nav .ui-state-default a { color: #5b5b5b; }
-
-/* line 212, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs.line-tab .ui-tabs-nav .ui-state-active a { position: relative; color: #3C4F7E; cursor: pointer; }
-
-/* line 216, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs.line-tab .ui-tabs-nav .ui-state-active a:after { content: ""; position: absolute; bottom: 0; left: 22px; width: calc(100% - 44px); height: 3px; background-color: #3C4F7E; }
-
-/* line 228, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-widget-content.ui-tabs.line-tab .ui-tabs-panel { padding: 30px; border-radius: 5px; border: solid 1px #EFEFEF; }
-
-/* line 238, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-accordion .ui-accordion-header { display: flex; align-items: center; justify-content: space-between; margin: 0 0 30px; padding: 0; border: none; background: none; border: none; color: #283541; font-size: 18px; }
-
-/* line 250, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-accordion .ui-accordion-header .ui-accordion-header-icon { display: none; }
-
-/* line 253, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-accordion .ui-accordion-header[class*="flex"] { display: flex; }
-
-/* line 256, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-accordion .ui-accordion-header:after { content: ""; display: inline-block; width: 25px; height: 25px; background: #fff url(/static/images/arrow-down.png) no-repeat right center/25px; }
-
-/* line 265, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-accordion .ui-accordion-header-active:after { transform: rotate(180deg); }
-
-/* line 270, src/assets/style/base/_jquery-reset.scss */ .ui-widget.ui-accordion .ui-accordion-content { margin: 0; padding: 0; border: none; }
-
 /* line 279, src/assets/style/base/_jquery-reset.scss */ .mCSB_horizontal.mCSB_inside > .mCSB_container { margin-bottom: 20px; }
 
 /* line 283, src/assets/style/base/_jquery-reset.scss */ .mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail { background-color: #ECECEC; }
 
 /* line 286, src/assets/style/base/_jquery-reset.scss */ .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger_onDrag .mCSB_dragger_bar:active, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:active { background-color: #5E43F8; }
-
-/* line 3, src/assets/style/base/_component.scss */ .dashboard a.btn { line-height: 20px; }
-
-/* line 6, src/assets/style/base/_component.scss */ .dashboard .btn { display: -webkit-inline-box; display: -moz-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; padding: 10px 20px; border-radius: 10px; background-color: #5E43F8; background-repeat: no-repeat; background-position: center; background-size: auto; font-family: "Pretendard-Regular"; font-size: 15px; color: #FFFFFF; cursor: pointer; line-height: 20px; }
-
-/* line 326, src/assets/style/base/_mixin.scss */ .dashboard .btn:hover, .dashboard .btn:active, .dashboard .btn:visited { color: #FFFFFF; }
-
-/* line 9, src/assets/style/base/_component.scss */ .dashboard .btn.btn-black { background-color: #1A1E27; background-repeat: no-repeat; background-position: center; background-size: auto; }
-
-/* line 12, src/assets/style/base/_component.scss */ .dashboard .btn.line-black-btn { border: 1px solid #1A1E27; background-color: #FFFFFF; background-repeat: no-repeat; background-position: center; background-size: auto; color: #1A1E27; }
-
-/* line 17, src/assets/style/base/_component.scss */ .dashboard .btn.btn-cancel { background-color: #767D83; background-repeat: no-repeat; background-position: center; background-size: auto; }
-
-/* line 20, src/assets/style/base/_component.scss */ .dashboard .btn.btn-delete { background-color: #F24546; background-repeat: no-repeat; background-position: center; background-size: auto; }
-
-/* line 23, src/assets/style/base/_component.scss */ .dashboard .btn.btn-transparent { background-color: transparent; background-repeat: no-repeat; background-position: center; background-size: auto; }
-
-/* line 26, src/assets/style/base/_component.scss */ .dashboard .btn.icon-btn { padding: 5px; }
-
-/* line 29, src/assets/style/base/_component.scss */ .dashboard .btn.btn-excel { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #107C41; background-image: url("../images/icon-excel.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
-
-/* line 36, src/assets/style/base/_component.scss */ .dashboard .btn.btn-download { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #5E43F8; background-image: url("../images/icon-download.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
-
-/* line 44, src/assets/style/base/_component.scss */ .dashboard .txt-btn { font-size: 14px; }
-
-/* line 46, src/assets/style/base/_component.scss */ .dashboard .txt-btn + .txt-btn { padding-left: 15px; }
-
-/* line 49, src/assets/style/base/_component.scss */ .dashboard .txt-btn.btn-gray { color: #AAAAAA; }
-
-/* line 52, src/assets/style/base/_component.scss */ .dashboard .txt-btn.btn-primary { color: #5E43F8; }
-
-/* line 57, src/assets/style/base/_component.scss */ .dashboard [class^=icon-] { display: inline-block; width: 20px; height: 20px; }
-
-/* line 61, src/assets/style/base/_component.scss */ .dashboard [class^=icon-].sm { width: 18px; height: 18px; }
-
-/* line 65, src/assets/style/base/_component.scss */ .dashboard [class^=icon-].lg { width: 26px; height: 26px; }
-
-/* line 72, src/assets/style/base/_component.scss */ .dashboard .icon-home { background-image: url("../images/icon-home-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 74, src/assets/style/base/_component.scss */ .dashboard .icon-home-active { background-image: url("../images/icon-home-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 78, src/assets/style/base/_component.scss */ .dashboard .icon-bill { background-image: url("../images/icon-bill-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 80, src/assets/style/base/_component.scss */ .dashboard .icon-bill-active { background-image: url("../images/icon-bill-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 83, src/assets/style/base/_component.scss */ .dashboard .icon-bill-over { background-image: url("../images/icon-bill-over.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 87, src/assets/style/base/_component.scss */ .dashboard .icon-inout { background-image: url("../images/icon-inout-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 89, src/assets/style/base/_component.scss */ .dashboard .icon-inout-active { background-image: url("../images/icon-inout-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 92, src/assets/style/base/_component.scss */ .dashboard .icon-inout-over { background-image: url("../images/icon-inout-over.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 96, src/assets/style/base/_component.scss */ .dashboard .icon-staff { background-image: url("../images/icon-staff-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 98, src/assets/style/base/_component.scss */ .dashboard .icon-staff-active { background-image: url("../images/icon-staff-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 101, src/assets/style/base/_component.scss */ .dashboard .icon-staff-over { background-image: url("../images/icon-staff-over.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 105, src/assets/style/base/_component.scss */ .dashboard .icon-setting { background-image: url("../images/icon-setting-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 107, src/assets/style/base/_component.scss */ .dashboard .icon-setting-active { background-image: url("../images/icon-setting-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 110, src/assets/style/base/_component.scss */ .dashboard .icon-setting-over { background-image: url("../images/icon-setting-over.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 114, src/assets/style/base/_component.scss */ .dashboard .icon-product { background-image: url("../images/icon-product-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 116, src/assets/style/base/_component.scss */ .dashboard .icon-product-active { background-image: url("../images/icon-product-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 120, src/assets/style/base/_component.scss */ .dashboard .icon-code { background-image: url("../images/icon-code-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 122, src/assets/style/base/_component.scss */ .dashboard .icon-code-active { background-image: url("../images/icon-code-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 126, src/assets/style/base/_component.scss */ .dashboard .icon-notice { background-image: url("../images/icon-notice-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 128, src/assets/style/base/_component.scss */ .dashboard .icon-notice-active { background-image: url("../images/icon-notice-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 132, src/assets/style/base/_component.scss */ .dashboard .icon-user { background-image: url("../images/icon-user.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 135, src/assets/style/base/_component.scss */ .dashboard .icon-close { background-image: url("../images/icon-close.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 138, src/assets/style/base/_component.scss */ .dashboard .icon-mypage { background-image: url("../images/mypage-arrow.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 141, src/assets/style/base/_component.scss */ .dashboard .icon-logout { background-image: url("../images/icon-logout.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 145, src/assets/style/base/_component.scss */ .dashboard .icon-sort.up { background-image: url("../images/icon-sort-up.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 148, src/assets/style/base/_component.scss */ .dashboard .icon-sort.down { background-image: url("../images/icon-sort-down.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 152, src/assets/style/base/_component.scss */ .dashboard .icon-edit { background-image: url("../images/icon-edit.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 155, src/assets/style/base/_component.scss */ .dashboard .icon-print { background-image: url("../images/icon-print.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 158, src/assets/style/base/_component.scss */ .dashboard .icon-search { background-image: url("../images/icon-search.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 161, src/assets/style/base/_component.scss */ .dashboard .icon-pin { background-image: url("../images/icon-pin.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 165, src/assets/style/base/_component.scss */ .dashboard .icon-arrow-up { background-image: url("../images/pagination-next-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; transform: rotate(-90deg); }
-
-/* line 169, src/assets/style/base/_component.scss */ .dashboard .icon-arrow-down { background-image: url("../images/pagination-next-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; transform: rotate(90deg); }
 
 /* line 177, src/assets/style/base/_component.scss */ .app .list-table table { width: 700px; margin-top: -10px; border-collapse: separate; border-spacing: 0 10px; }
 
@@ -619,102 +415,6 @@
 
 /* line 310, src/assets/style/base/_component.scss */ .app .list-table.multiple-table + .pagination { margin-top: 20px; }
 
-/* line 316, src/assets/style/base/_component.scss */ .dashboard .pagination { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; margin-top: 10px; }
-
-/* line 321, src/assets/style/base/_component.scss */ .dashboard .pagination > * { width: 30px; height: 30px; }
-
-/* line 325, src/assets/style/base/_component.scss */ .dashboard .pagination .prev { margin-right: 13px; background-image: url("../images/pagination-prev-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 328, src/assets/style/base/_component.scss */ .dashboard .pagination .prev.disabled { background-image: url("../images/pagination-prev-disabled.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; opacity: 0.8; }
-
-/* line 333, src/assets/style/base/_component.scss */ .dashboard .pagination .next { margin-left: 13px; background-image: url("../images/pagination-next-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 336, src/assets/style/base/_component.scss */ .dashboard .pagination .next.disabled { background-image: url("../images/pagination-next-disabled.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; opacity: 0.8; }
-
-/* line 341, src/assets/style/base/_component.scss */ .dashboard .pagination .num { margin: 0 2px; text-align: center; line-height: 30px; font-family: "Pretendard-Medium"; color: #767D83; }
-
-/* line 347, src/assets/style/base/_component.scss */ .dashboard .pagination .num.active { border-radius: 50%; background-color: #5E43F8; color: #FFFFFF; }
-
-/* line 355, src/assets/style/base/_component.scss */ .dashboard .calendar { width: 500px; padding: 30px; border-radius: 15px; border: 1px solid #ECECEC; background-color: #FFFFFF; }
-
-/* line 361, src/assets/style/base/_component.scss */ .dashboard .calendar-btn { width: 22px; height: 22px; background-image: url("../images/icon-arrow.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 365, src/assets/style/base/_component.scss */ .dashboard .calendar-btn.prev-btn { transform: rotate(180deg); }
-
-/* line 368, src/assets/style/base/_component.scss */ .dashboard .calendar-btn.next-btn { order: 3; }
-
-/* line 372, src/assets/style/base/_component.scss */ .dashboard .calendar-header { margin-bottom: 10px; }
-
-/* line 375, src/assets/style/base/_component.scss */ .dashboard .calendar-week-end { color: #F24546; }
-
-/* line 377, src/assets/style/base/_component.scss */ .dashboard .calendar-week-end .calendar-date-default { color: #F24546; }
-
-/* line 381, src/assets/style/base/_component.scss */ .dashboard .calendar-date-default { width: 50px; height: 50px; border-radius: 50%; color: #767D83; }
-
-/* line 387, src/assets/style/base/_component.scss */ .dashboard .calendar-date-today { color: #5E43F8; background-color: #E7E3FF; }
-
-/* line 391, src/assets/style/base/_component.scss */ .dashboard .calendar-date-active { background-color: #5E43F8; color: #FFFFFF; }
-
-/* line 395, src/assets/style/base/_component.scss */ .dashboard .calendar table { width: 100%; }
-
-/* line 397, src/assets/style/base/_component.scss */ .dashboard .calendar table th, .dashboard .calendar table td { height: 60px; padding: 5px; text-align: center; vertical-align: middle; }
-
-/* line 403, src/assets/style/base/_component.scss */ .dashboard .calendar table td { position: relative; }
-
-/* line 409, src/assets/style/base/_component.scss */ .dashboard .static-calendar { position: relative; z-index: 5; }
-
-/* line 414, src/assets/style/base/_component.scss */ .dashboard .setting-th { left: -480px; border-radius: 0 15px 15px 0; background-color: #F5F8FF; -ms-flex-align-self: flex-end; -webkit-align-self: flex-end; align-self: flex-end; box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.14); position: relative; z-index: 1; transition: 0.4s ease-in-out; }
-
-/* line 425, src/assets/style/base/_component.scss */ .dashboard .setting-th.is-active { left: 0; }
-
-/* line 430, src/assets/style/base/_component.scss */ .dashboard .badge { padding: 4px 16px; border-radius: 14px; color: #FFFFFF; line-height: 18px; }
-
-/* line 435, src/assets/style/base/_component.scss */ .dashboard .badge.green { background-color: #28BCA1; }
-
-/* line 438, src/assets/style/base/_component.scss */ .dashboard .badge.red { background-color: #F24546; }
-
-/* line 441, src/assets/style/base/_component.scss */ .dashboard .badge.yellow { background-color: #FEAB47; }
-
-/* line 444, src/assets/style/base/_component.scss */ .dashboard .badge.gray { background-color: #D2D2D2; }
-
-/* line 449, src/assets/style/base/_component.scss */ .dashboard .file { width: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: calc(100% - 40px); line-height: 20px; }
-
-/* line 453, src/assets/style/base/_component.scss */ .dashboard .file-list { border-radius: 10px; padding: 15px; padding-top: 5px; border: 1px solid #ECECEC; }
-
-/* line 457, src/assets/style/base/_component.scss */ .dashboard .file-list ul { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
-
-/* line 462, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type { height: calc(100% - 120px); display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
-
-/* line 465, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type ul { width: 350px; height: 364px; overflow-y: auto; }
-
-/* line 470, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file { text-align: left; width: 280px; padding: 10px 0; padding-left: 10px; border-radius: 6px; }
-
-/* line 475, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file:hover { background-color: #F5F8FF; background-repeat: no-repeat; background-position: center; background-size: auto; }
-
-/* line 478, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file.is-active { background-color: #5E43F8; background-repeat: no-repeat; background-position: center; background-size: auto; color: #FFFFFF; }
-
-/* line 482, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file-item { margin-top: 0; padding-right: 10px; }
-
-/* line 487, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .btn-group .btn { margin: 0; }
-
-/* line 492, src/assets/style/base/_component.scss */ .dashboard .file-item { margin-top: 10px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: justify; -moz-box-pack: justify; -ms-flex-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; }
-
-/* line 497, src/assets/style/base/_component.scss */ .dashboard .file-item.none-item { padding: 30px 0 40px; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; color: #AAAAAA; }
-
-/* line 503, src/assets/style/base/_component.scss */ .dashboard .file-delete-btn { width: 20px; height: 20px; background-image: url("../images/icon-delete.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 510, src/assets/style/base/_component.scss */ .dashboard .radio-group label, .dashboard .checkbox-group label { margin-right: 15px; }
-
-/* line 513, src/assets/style/base/_component.scss */ .dashboard .radio-group label:last-child, .dashboard .checkbox-group label:last-child { margin-right: 0; }
-
-/* line 519, src/assets/style/base/_component.scss */ .dashboard .capsule-title { padding-bottom: 8px; border-bottom: 1px solid #ECECEC; color: #767D83; }
-
-/* line 524, src/assets/style/base/_component.scss */ .dashboard .capsule-content { margin-top: 5px; background-color: #FFFFFF; border-radius: 8px; padding: 8px; }
-
-/* line 532, src/assets/style/base/_component.scss */ .dashboard .toggle-edit { padding-top: 33px; display: none; }
-
-/* line 535, src/assets/style/base/_component.scss */ .dashboard .toggle-edit.is-active { display: block; }
-
 /* line 543, src/assets/style/base/_component.scss */ .app a.btn { line-height: 20px; }
 
 /* line 547, src/assets/style/base/_component.scss */ .app .btn { display: -webkit-inline-box; display: -moz-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; padding: 10px 20px; border-radius: 10px; background-color: #5E43F8; background-repeat: no-repeat; background-position: center; background-size: auto; font-family: "Pretendard-Regular"; font-size: 15px; color: #FFFFFF; cursor: pointer; padding: 14px 20px; line-height: 20px; }
@@ -751,96 +451,6 @@
 
 /* line 607, src/assets/style/base/_component.scss */ .app .txt-btn.btn-black { color: #1A1E27; }
 
-/* line 612, src/assets/style/base/_component.scss */ .app [class^=icon-] { display: inline-block; width: 20px; height: 20px; }
-
-/* line 616, src/assets/style/base/_component.scss */ .app [class^=icon-].sm { width: 18px; height: 18px; }
-
-/* line 620, src/assets/style/base/_component.scss */ .app [class^=icon-].lg { width: 24px; height: 24px; }
-
-/* line 624, src/assets/style/base/_component.scss */ .app [class^=icon-].xl { padding: 0; width: 30px; height: 30px; }
-
-/* line 632, src/assets/style/base/_component.scss */ .app .icon-home { background-image: url("../images/icon-home-default-a.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 634, src/assets/style/base/_component.scss */ .app .icon-home-active { background-image: url("../images/icon-home-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 637, src/assets/style/base/_component.scss */ .app .icon-home-app { background-image: url("../images/icon-home-a.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 641, src/assets/style/base/_component.scss */ .app .icon-bill { background-image: url("../images/icon-bill-default-a.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 643, src/assets/style/base/_component.scss */ .app .icon-bill-active { background-image: url("../images/icon-bill-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 647, src/assets/style/base/_component.scss */ .app .icon-inout { background-image: url("../images/icon-inout-default-a.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 649, src/assets/style/base/_component.scss */ .app .icon-inout-active { background-image: url("../images/icon-inout-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 653, src/assets/style/base/_component.scss */ .app .icon-staff { background-image: url("../images/icon-staff-default-a.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 655, src/assets/style/base/_component.scss */ .app .icon-staff-active { background-image: url("../images/icon-staff-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 659, src/assets/style/base/_component.scss */ .app .icon-admin { background-image: url("../images/icon-admin-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 661, src/assets/style/base/_component.scss */ .app .icon-admin-active { background-image: url("../images/icon-admin-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 665, src/assets/style/base/_component.scss */ .app .icon-setting { background-image: url("../images/icon-setting-default-a.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 667, src/assets/style/base/_component.scss */ .app .icon-setting-active { background-image: url("../images/icon-setting-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 671, src/assets/style/base/_component.scss */ .app .icon-history { background-image: url("../images/icon-history-default-a.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 673, src/assets/style/base/_component.scss */ .app .icon-history-active { background-image: url("../images/icon-history-active.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 677, src/assets/style/base/_component.scss */ .app .icon-user { background-image: url("../images/icon-user.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 680, src/assets/style/base/_component.scss */ .app .icon-close { background-image: url("../images/icon-close.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 683, src/assets/style/base/_component.scss */ .app .icon-mypage { background-image: url("../images/mypage-arrow.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 686, src/assets/style/base/_component.scss */ .app .icon-more { background-image: url("../images/mypage-arrow.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; transform: rotate(90deg); }
-
-/* line 690, src/assets/style/base/_component.scss */ .app .icon-logout { background-image: url("../images/icon-logout.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 694, src/assets/style/base/_component.scss */ .app .icon-sort.up { background-image: url("../images/icon-sort-up.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 697, src/assets/style/base/_component.scss */ .app .icon-sort.down { background-image: url("../images/icon-sort-down.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 701, src/assets/style/base/_component.scss */ .app .icon-edit { background-image: url("../images/icon-edit.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 704, src/assets/style/base/_component.scss */ .app .icon-print { background-image: url("../images/icon-print.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 707, src/assets/style/base/_component.scss */ .app .icon-search { background-image: url("../images/icon-search.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 710, src/assets/style/base/_component.scss */ .app .icon-pin { background-image: url("../images/icon-pin.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 714, src/assets/style/base/_component.scss */ .app .icon-arrow-up { background-image: url("../images/pagination-next-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; transform: rotate(-90deg); }
-
-/* line 718, src/assets/style/base/_component.scss */ .app .icon-arrow-down { background-image: url("../images/pagination-next-default.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; transform: rotate(90deg); }
-
-/* line 722, src/assets/style/base/_component.scss */ .app .icon-arrow-right { background-image: url("../images/icon-right-arrow.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 726, src/assets/style/base/_component.scss */ .app .icon-menu { background-image: url("../images/icon-menu.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 729, src/assets/style/base/_component.scss */ .app .icon-back { background-image: url("../images/icon-back.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 732, src/assets/style/base/_component.scss */ .app .icon-camera { background-image: url("../images/icon-camera.png"); background-repeat: no-repeat; background-position: center; background-size: 100%; }
-
-/* line 737, src/assets/style/base/_component.scss */ .app .badge { display: inline-block; padding: 5px 16px; border-radius: 14px; color: #FFFFFF; line-height: 20px; }
-
-/* line 743, src/assets/style/base/_component.scss */ .app .badge.green { background-color: #28BCA1; }
-
-/* line 746, src/assets/style/base/_component.scss */ .app .badge.red { background-color: #F24546; }
-
-/* line 749, src/assets/style/base/_component.scss */ .app .badge.yellow { background-color: #FEAB47; }
-
-/* line 752, src/assets/style/base/_component.scss */ .app .badge.gray { background-color: #D2D2D2; }
-
-/* line 755, src/assets/style/base/_component.scss */ .app .badge.light-gray { background-color: #EEEEEE; }
-
-/* line 757, src/assets/style/base/_component.scss */ .app .badge.light-gray + .item { opacity: 0.6; }
-
-/* line 761, src/assets/style/base/_component.scss */ .app .badge.black { background-color: #1A1E27; }
-
-/* line 766, src/assets/style/base/_component.scss */ .app .file { width: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: calc(100% - 40px); line-height: 20px; }
-
 /* line 771, src/assets/style/base/_component.scss */ .app .file-list ul { padding: 15px; padding-bottom: 0; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; max-height: 105px; overflow-y: auto; border-radius: 10px; background-color: #FFFFFF; }
 
 /* line 811, src/assets/style/base/_component.scss */ .app .file-item { margin-bottom: 10px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: justify; -moz-box-pack: justify; -ms-flex-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; }
@@ -851,13 +461,7 @@
 
 /* line 829, src/assets/style/base/_component.scss */ .app input.datepicker { padding-left: 49px; width: 60%; background-image: url("../images/icon-datepicker.png"); background-repeat: no-repeat; background-position: center left 15px; background-size: 24px; }
 
-/* line 835, src/assets/style/base/_component.scss */ .app .camera { margin: 0 20px; height: calc(100vh - 223px); background-color: #EEEEEE; }
-
-/* line 841, src/assets/style/base/_component.scss */ .app .map { margin: 0 20px; height: calc(100vh - 219px); background-color: #EEEEEE; }
-
 /* line 847, src/assets/style/base/_component.scss */ .app .cert-item { position: relative; display: none; }
-
-/* line 852, src/assets/style/base/_component.scss */ .app .timer { position: absolute; right: 20px; top: 18px; font-size: 12px; color: #AAAAAA; }
 
 /* line 860, src/assets/style/base/_component.scss */ .app .none-item { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; height: calc(100vh - 353px); -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; }
 
@@ -869,139 +473,11 @@
 
 /* line 15, src/assets/style/layout/layout.scss */ .clearfix { *zoom: 1; }
 
-/* line 24, src/assets/style/layout/layout.scss */ .dashboard { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; background-color: #F5F8FF; }
-
-/* line 28, src/assets/style/layout/layout.scss */ .dashboard .container { width: calc(100% - 260px); padding: 30px; }
-
-/* line 33, src/assets/style/layout/layout.scss */ .dashboard .btn-group { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
-
-/* line 35, src/assets/style/layout/layout.scss */ .dashboard .btn-group .btn { margin-right: 10px; }
-
-/* line 37, src/assets/style/layout/layout.scss */ .dashboard .btn-group .btn:last-child { margin-right: 0; }
-
-/* line 43, src/assets/style/layout/layout.scss */ .dashboard .wrap { background-color: #FFFFFF; border-radius: 20px; padding: 30px; }
-
-/* line 47, src/assets/style/layout/layout.scss */ .dashboard .wrap + .wrap { margin-top: 30px; }
-
-/* line 52, src/assets/style/layout/layout.scss */ .dashboard .title-wrap { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: justify; -moz-box-pack: justify; -ms-flex-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; margin-bottom: 30px; }
-
-/* line 57, src/assets/style/layout/layout.scss */ .dashboard .title-wrap .title { line-height: 30px; font-family: "Pretendard-Medium"; font-size: 19px; }
-
-/* line 62, src/assets/style/layout/layout.scss */ .dashboard .title-wrap .sub-title { font-size: 17px; font-family: "Pretendard-SemiBold"; color: #5E43F8; }
-
-/* line 69, src/assets/style/layout/layout.scss */ .dashboard .main-image-section, .dashboard .quick-link-section { width: calc(50% - 15px); -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 1; -ms-flex: 1 1 1; flex: 1 1 1; }
-
-/* line 75, src/assets/style/layout/layout.scss */ .dashboard .main-image-section { margin-right: 30px; }
-
-/* line 77, src/assets/style/layout/layout.scss */ .dashboard .main-image-section .frame { width: 100%; height: 100%; border: 1px solid #ECECEC; overflow: hidden; }
-
-/* line 82, src/assets/style/layout/layout.scss */ .dashboard .main-image-section .frame img { max-width: 100%; }
-
-/* line 86, src/assets/style/layout/layout.scss */ .dashboard .main-image-section .description { top: 50%; left: 50%; color: #AAAAAA; transform: translate(-50%, -50%); }
-
-/* line 92, src/assets/style/layout/layout.scss */ .dashboard .main-image-section .image-upload-btn { position: absolute; bottom: 36px; right: 36px; width: 32px; height: 32px; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08); background: #FFFFFF; border-radius: 10px; }
-
-/* line 101, src/assets/style/layout/layout.scss */ .dashboard .main-image-section .image-upload-btn .icon-btn { width: 100%; height: 100%; background-image: url("../images/icon-image.png"); background-repeat: no-repeat; background-position: center; background-size: 20px; cursor: pointer; }
-
-/* line 107, src/assets/style/layout/layout.scss */ .dashboard .main-image-section .image-upload-btn input { display: none; }
-
-/* line 113, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link { display: block; width: 100%; height: 136px; padding: 20px 20px 25px; padding-right: 13px; border-radius: 10px; text-align: left; border: 1px solid #ECECEC; background-color: #FFFFFF; }
-
-/* line 122, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link-list { position: relative; }
-
-/* line 124, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link-list ul { margin: 0 -10px; }
-
-/* line 128, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link-item { width: calc(33.332% - 3px); display: inline-block; padding: 0 10px; }
-
-/* line 132, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link-item:nth-child(n+4) { padding-top: 20px; }
-
-/* line 136, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link-name { display: inline-block; margin-top: 15px; padding-right: 23px; color: #767D83; line-height: 20px; font-size: 15px; letter-spacing: -0.5px; background-image: url("../images/mypage-arrow.png"); background-repeat: no-repeat; background-position: center right; background-size: 20px; }
-
-/* line 146, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link:hover { background-color: #5E43F8; }
-
-/* line 148, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link:hover .link-name { color: #FFFFFF; background-image: url("../images/mypage-arrow-white.png"); background-repeat: no-repeat; background-position: center right; background-size: 20px; }
-
-/* line 153, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link i { width: 36px; height: 36px; }
-
-/* line 158, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .quick-band-btn { position: absolute; bottom: 17px; right: 0; display: block; width: 102px; height: 102px; background-color: #21C531; background-image: url("../images/icon-band-white.png"); background-repeat: no-repeat; background-position: center top 28px; background-size: 57px; border-radius: 50%; padding-top: 55px; text-align: center; color: #FFFFFF; }
-
-/* line 173, src/assets/style/layout/layout.scss */ .dashboard .form { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
-
-/* line 175, src/assets/style/layout/layout.scss */ .dashboard .form + .form { margin-top: 15px; }
-
-/* line 178, src/assets/style/layout/layout.scss */ .dashboard .form.column { -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
-
-/* line 180, src/assets/style/layout/layout.scss */ .dashboard .form.column .item { margin-bottom: 15px; }
-
-/* line 182, src/assets/style/layout/layout.scss */ .dashboard .form.column .item:last-child { margin-bottom: 0; }
-
-/* line 187, src/assets/style/layout/layout.scss */ .dashboard .form.row { -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; margin-bottom: 15px; }
-
-/* line 190, src/assets/style/layout/layout.scss */ .dashboard .form.row:last-child { margin-bottom: 0; }
-
-/* line 193, src/assets/style/layout/layout.scss */ .dashboard .form.row input, .dashboard .form.row select { margin-right: 15px; }
-
-/* line 196, src/assets/style/layout/layout.scss */ .dashboard .form.row input:last-child, .dashboard .form.row select:last-child { margin-right: 0; }
-
-/* line 200, src/assets/style/layout/layout.scss */ .dashboard .form.row .item { margin-right: 15px; }
-
-/* line 202, src/assets/style/layout/layout.scss */ .dashboard .form.row .item:last-child { margin-right: 0; }
-
-/* line 207, src/assets/style/layout/layout.scss */ .dashboard .form .item { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: start; -moz-box-pack: start; -ms-flex-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -ms-flex-wrap: wrap; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
-
-/* line 214, src/assets/style/layout/layout.scss */ .dashboard .form input, .dashboard .form select { -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
-
-/* line 217, src/assets/style/layout/layout.scss */ .dashboard .form input.datepicker, .dashboard .form select.datepicker { padding-left: 45px; width: 150px; background-image: url("../images/icon-datepicker.png"); background-repeat: no-repeat; background-position: center left 10px; background-size: 20px; }
-
-/* line 222, src/assets/style/layout/layout.scss */ .dashboard .form input + input, .dashboard .form input + select, .dashboard .form select + input, .dashboard .form select + select { -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
-
-/* line 227, src/assets/style/layout/layout.scss */ .dashboard .form .date-group { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box: 0; -moz-box: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; }
-
-/* line 231, src/assets/style/layout/layout.scss */ .dashboard .form .date-group + .date-group { margin-left: 15px; }
-
-/* line 234, src/assets/style/layout/layout.scss */ .dashboard .form .date-group .space { width: 30px; height: 40px; background-image: url("../images/space-bg.png"); background-repeat: no-repeat; background-position: center center; background-size: 10px; }
-
-/* line 240, src/assets/style/layout/layout.scss */ .dashboard .form .title-label { min-width: 100px; line-height: 42px; margin-right: 5px; }
-
-/* line 244, src/assets/style/layout/layout.scss */ .dashboard .form .title-label.required { position: relative; }
-
-/* line 246, src/assets/style/layout/layout.scss */ .dashboard .form .title-label.required:after { display: inline; font-size: 12px; content: '*'; color: #F24546; }
-
-/* line 257, src/assets/style/layout/layout.scss */ .dashboard .form .small-label { width: 110px; margin-right: 5px; font-size: 13px; font-family: "Pretendard-Medium"; color: #5E43F8; }
-
 /* line 268, src/assets/style/layout/layout.scss */ .app.overflow-hidden { overflow: hidden; }
 
 /* line 272, src/assets/style/layout/layout.scss */ .app main { padding-top: 75px; }
 
 /* line 276, src/assets/style/layout/layout.scss */ .app .container { padding: 20px; }
-
-/* line 280, src/assets/style/layout/layout.scss */ .app .form { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
-
-/* line 283, src/assets/style/layout/layout.scss */ .app .form .item { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; margin-bottom: 15px; }
-
-/* line 287, src/assets/style/layout/layout.scss */ .app .form .item:last-child { margin-bottom: 0 !important; }
-
-/* line 290, src/assets/style/layout/layout.scss */ .app .form .item input, .app .form .item select { width: 100%; }
-
-/* line 293, src/assets/style/layout/layout.scss */ .app .form .item .title-label + input, .app .form .item .title-label + select { width: calc(100% - 75px); }
-
-/* line 298, src/assets/style/layout/layout.scss */ .app .form-value { color: #1A1E27; line-height: 20px; width: calc(100% - 75px); }
-
-/* line 303, src/assets/style/layout/layout.scss */ .app .form .title-label { min-width: 70px; margin-right: 5px; color: #767D83; }
-
-/* line 307, src/assets/style/layout/layout.scss */ .app .form .title-label.required { position: relative; }
-
-/* line 309, src/assets/style/layout/layout.scss */ .app .form .title-label.required:after { display: inline; font-size: 12px; content: '*'; color: #F24546; }
-
-/* line 319, src/assets/style/layout/layout.scss */ .app .form .title-label.bold { font-family: "Pretendard-Medium"; color: #1A1E27; }
-
-/* line 324, src/assets/style/layout/layout.scss */ .app .form .text-frame { min-height: 200px; }
-
-/* line 327, src/assets/style/layout/layout.scss */ .app .form.tight .item { -webkit-box-align: start; -moz-box-align: start; -ms-flex-align: start; -webkit-align-items: flex-start; align-items: flex-start; margin-bottom: 5px; }
-
-/* line 330, src/assets/style/layout/layout.scss */ .app .form.tight .item .title-label { line-height: 20px; }
-
-/* line 334, src/assets/style/layout/layout.scss */ .app .form .btn span { white-space: nowrap; }
 
 /* line 339, src/assets/style/layout/layout.scss */ .app .btn-group { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
 
@@ -1019,119 +495,13 @@
 
 /* line 366, src/assets/style/layout/layout.scss */ .app .wrap { background-color: #FFFFFF; }
 
-/* line 371, src/assets/style/layout/layout.scss */ .app .box { border-radius: 10px; background-color: #FFFFFF; }
-
-/* line 374, src/assets/style/layout/layout.scss */ .app .box .container { padding: 20px 15px; }
-
-/* line 377, src/assets/style/layout/layout.scss */ .app .box + .title { margin-top: 30px; }
-
 /* line 380, src/assets/style/layout/layout.scss */ .app .box + .box { margin-top: 15px; }
-
-/* line 383, src/assets/style/layout/layout.scss */ .app .box .icon-mypage { opacity: 0.5; }
-
-/* line 388, src/assets/style/layout/layout.scss */ .app .main-image-section { width: 100%; }
-
-/* line 390, src/assets/style/layout/layout.scss */ .app .main-image-section .frame { width: calc(100vw - 40px); min-height: calc(100vw - 40px); overflow: hidden; background-color: #FFFFFF; }
-
-/* line 395, src/assets/style/layout/layout.scss */ .app .main-image-section .frame img { max-width: 100%; }
-
-/* line 399, src/assets/style/layout/layout.scss */ .app .main-image-section .description { top: 50%; left: 50%; color: #AAAAAA; white-space: nowrap; transform: translate(-50%, -50%); }
-
-/* line 406, src/assets/style/layout/layout.scss */ .app .main-image-section .image-upload-btn { position: absolute; bottom: 20px; right: 20px; width: 36px; height: 36px; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08); background: #FFFFFF; border-radius: 10px; border: 1px solid #ECECEC; }
-
-/* line 416, src/assets/style/layout/layout.scss */ .app .main-image-section .image-upload-btn .icon-btn { width: 100%; height: 100%; background-image: url("../images/icon-image.png"); background-repeat: no-repeat; background-position: center; background-size: 20px; cursor: pointer; }
-
-/* line 422, src/assets/style/layout/layout.scss */ .app .main-image-section .image-upload-btn input { display: none; }
-
-/* line 428, src/assets/style/layout/layout.scss */ .app .admin { color: #767D83; }
-
-/* line 430, src/assets/style/layout/layout.scss */ .app .admin-toggle { padding: 13px 15px; border-radius: 10px; background-color: #F5F8FF; margin-bottom: 30px; }
-
-/* line 436, src/assets/style/layout/layout.scss */ .app .admin-toggle.is-active .admin { color: #5E43F8; }
-
-/* line 442, src/assets/style/layout/layout.scss */ .app .admin-onoff input + .admin-toggle-btn { position: relative; width: 58px; height: 30px; padding: 1px; display: block; transition: all 0.4s ease; background-color: #AAAAAA; border-radius: 15px; }
-
-/* line 451, src/assets/style/layout/layout.scss */ .app .admin-onoff input + .admin-toggle-btn:before { display: none; }
-
-/* line 454, src/assets/style/layout/layout.scss */ .app .admin-onoff input + .admin-toggle-btn:after { position: relative; width: 35px; height: 28px; border-radius: 14px; content: 'OFF'; display: block; text-align: center; line-height: 28px; background-color: #F5F8FF; color: #AAAAAA; left: 0; font-size: 10px; transition: all 0.2s ease; }
-
-/* line 470, src/assets/style/layout/layout.scss */ .app .admin-onoff input:checked + .admin-toggle-btn { background-color: #28BCA1; }
-
-/* line 472, src/assets/style/layout/layout.scss */ .app .admin-onoff input:checked + .admin-toggle-btn:after { content: 'ON'; color: #28BCA1; left: 21px; }
-
-/* line 481, src/assets/style/layout/layout.scss */ .app .notice { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
-
-/* line 484, src/assets/style/layout/layout.scss */ .app .notice-list { padding-bottom: 15px; }
-
-/* line 487, src/assets/style/layout/layout.scss */ .app .notice .item { border-bottom: 1px solid #ECECEC; }
-
-/* line 489, src/assets/style/layout/layout.scss */ .app .notice .item:last-child { border-bottom: 0; }
-
-/* line 492, src/assets/style/layout/layout.scss */ .app .notice .item .modal-btn { display: block; width: 100%; text-align: left; padding: 15px 0; padding-right: 32px; background-image: url("../images/icon-arrow.png"); background-repeat: no-repeat; background-position: center right; background-size: 32px; }
-
-/* line 499, src/assets/style/layout/layout.scss */ .app .notice .item .date { color: #AAAAAA; line-height: 20px; }
-
-/* line 503, src/assets/style/layout/layout.scss */ .app .notice .item .title { font-size: 15px; margin-top: 10px; line-height: 20px; margin-bottom: 0; }
-
-/* line 512, src/assets/style/layout/layout.scss */ .app .data { padding-bottom: 15px; line-height: 20px; border-bottom: 1px solid #ECECEC; }
-
-/* line 517, src/assets/style/layout/layout.scss */ .app .data-label { padding-right: 10px; color: #767D83; }
-
-/* line 520, src/assets/style/layout/layout.scss */ .app .data-label + .data-value { padding-right: 15px; }
-
-/* line 525, src/assets/style/layout/layout.scss */ .app .data-value { color: #1A1E27; }
-
-/* line 527, src/assets/style/layout/layout.scss */ .app .data-value + .data-label { margin-left: 20px; }
-
-/* line 530, src/assets/style/layout/layout.scss */ .app .data-value + .data-value { position: relative; padding-left: 21px; }
-
-/* line 533, src/assets/style/layout/layout.scss */ .app .data-value + .data-value:before { position: absolute; top: 5px; left: 10px; height: 10px; width: 1px; content: ''; display: block; background-color: #ECECEC; }
 
 /* line 548, src/assets/style/layout/layout.scss */ .apps { min-height: 100vh; padding-bottom: 88px; background-color: #F5F8FF; }
 
 /* line 552, src/assets/style/layout/layout.scss */ .apps.main { padding-bottom: 78px; }
 
 /* line 556, src/assets/style/layout/layout.scss */ .none-nav { min-height: 100vh; background-color: #F5F8FF; }
-
-/* line 1, src/assets/style/layout/lnb.scss */ .dashboard nav { width: 260px; color: #767D83; background-color: #FFFFFF; background-image: url("../images/pc-lnb-bg.png"); background-repeat: no-repeat; background-position: center bottom 40px; background-size: 220px; }
-
-/* line 5, src/assets/style/layout/lnb.scss */ .dashboard nav .logo { width: 100%; height: 92px; background-image: url("../images/logo.png"); background-repeat: no-repeat; background-position: center; background-size: 89px; }
-
-/* line 11, src/assets/style/layout/lnb.scss */ .menu-list-wrap { padding: 40px 20px; }
-
-/* line 14, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth a { display: block; width: 100%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: start; -moz-box-pack: start; -ms-flex-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start; padding: 18px 15px; border-radius: 15px; color: #767D83; }
-
-/* line 21, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth a i { margin-right: 10px; }
-
-/* line 24, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth a span { position: relative; line-height: 20px; }
-
-/* line 27, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth a span:after { position: absolute; left: 0; bottom: -1px; width: 0; height: 1px; background-color: #B8B8B8; transition: all ease-in-out 0.2s; display: block; content: ''; }
-
-/* line 39, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth a:hover span:after { position: absolute; width: 100%; transition: all ease-in-out 0.2s; }
-
-/* line 45, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth.is-active a { background-color: #F5F8FF; font-family: "Pretendard-Medium"; color: #5E43F8; }
-
-/* line 49, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth.is-active a:hover span:after { background-color: #5E43F8; }
-
-/* line 1, src/assets/style/layout/rnb.scss */ .app .rnb { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 300; display: none; }
-
-/* line 10, src/assets/style/layout/rnb.scss */ .app .rnb-wrap { position: absolute; top: 0; right: 0; bottom: 0; width: 260px; background-color: #FFFFFF; z-index: 250; }
-
-/* line 18, src/assets/style/layout/rnb.scss */ .app .rnb-wrap .txt-btn { position: absolute; bottom: 25px; right: 20px; color: #767D83; text-decoration: underline; }
-
-/* line 27, src/assets/style/layout/rnb.scss */ .app .rnb-top-inner { padding: 23px 20px; padding-bottom: 20px; }
-
-/* line 29, src/assets/style/layout/rnb.scss */ .app .rnb-top-inner .btn { padding: 0; }
-
-/* line 36, src/assets/style/layout/rnb.scss */ .app .rnb-list .one-depth a { display: block; padding: 15px 20px; padding-right: 0; line-height: 20px; }
-
-/* line 41, src/assets/style/layout/rnb.scss */ .app .rnb-list .one-depth.is-active a { background-color: #F5F8FF; color: #5E43F8; font-family: "Pretendard-Medium"; }
-
-/* line 49, src/assets/style/layout/rnb.scss */ .app .rnb-outlink { margin: 15px 20px; margin-bottom: 0; border-top: 1px solid #ECECEC; }
-
-/* line 52, src/assets/style/layout/rnb.scss */ .app .rnb-outlink .btn { -webkit-box-pack: start; -moz-box-pack: start; -ms-flex-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start; padding: 15px 0; padding-left: 47px; text-align: left; color: #21C531; background-color: transparent; background-image: url("../images/icon-band-green.png"); background-repeat: no-repeat; background-position: center left; background-size: 42px; }
-
-/* line 61, src/assets/style/layout/rnb.scss */ .app .rnb-dim { position: relative; width: 100%; height: 100%; background-color: rgba(26, 30, 39, 0.56); z-index: 150; }
 
 /* line 1, src/assets/style/layout/navigation.scss */ .apps .navigation { position: fixed; bottom: 0; left: 0; right: 0; border-top: 1px solid #e0e0e0; background-color: #FFFFFF; box-shadow: 0px -2px 14px rgba(0, 0, 0, 0.08); z-index: 50; }
 
@@ -1144,40 +514,6 @@
 /* line 19, src/assets/style/layout/navigation.scss */ .apps .navigation a, .apps .navigation button { width: 100%; padding: 17px 0; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; font-size: 12px; }
 
 /* line 28, src/assets/style/layout/navigation.scss */ .apps .navigation .name { color: #B8B8B8; margin-top: 5px; }
-
-/* line 2, src/assets/style/layout/header.scss */ .dashboard header { padding-bottom: 30px; box-sizing: border-box; }
-
-/* line 5, src/assets/style/layout/header.scss */ .dashboard header .select-group { margin-right: 30px; }
-
-/* line 7, src/assets/style/layout/header.scss */ .dashboard header .select-group .default-select { min-width: 165px; }
-
-/* line 11, src/assets/style/layout/header.scss */ .dashboard header .head-label { color: #767D83; line-height: 40px; padding-right: 10px; }
-
-/* line 16, src/assets/style/layout/header.scss */ .dashboard header .user-logo { width: 36px; height: 36px; }
-
-/* line 19, src/assets/style/layout/header.scss */ .dashboard header .user-logo .icon-user { width: 100%; height: 100%; }
-
-/* line 24, src/assets/style/layout/header.scss */ .dashboard header .user-info-btn { padding-right: 30px; background-image: url("../images/selectbox-arrow-down.png"); background-repeat: no-repeat; background-position: center right; background-size: 20px; }
-
-/* line 27, src/assets/style/layout/header.scss */ .dashboard header .user-info-btn.is-open { background-image: url("../images/selectbox-arrow-up.png"); background-repeat: no-repeat; background-position: center right; background-size: 20px; }
-
-/* line 32, src/assets/style/layout/header.scss */ .dashboard header .welcome-text b { display: block; font-family: "Pretendard-Medium"; }
-
-/* line 37, src/assets/style/layout/header.scss */ .dashboard header .clip { margin-top: -12px; }
-
-/* line 40, src/assets/style/layout/header.scss */ .dashboard header .user-info { display: none; position: absolute; top: 46px; right: 0; width: 233px; padding: 20px; padding-top: 15px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #FFFFFF; border-radius: 15px; z-index: 10; }
-
-/* line 51, src/assets/style/layout/header.scss */ .dashboard header .user-info .welcome-text { -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 0; -ms-flex: 1 1 0; flex: 1 1 0; margin-left: 20px; padding: 0; background: transparent; }
-
-/* line 56, src/assets/style/layout/header.scss */ .dashboard header .user-info .welcome-text > * { line-height: 20px; }
-
-/* line 60, src/assets/style/layout/header.scss */ .dashboard header .user-info .position-re { z-index: 10; }
-
-/* line 64, src/assets/style/layout/header.scss */ .dashboard header .divide { margin-top: 15px; padding-top: 15px; border-top: 1px solid #ECECEC; }
-
-/* line 69, src/assets/style/layout/header.scss */ .dashboard header .logout-btn { color: #F24546; }
-
-/* line 71, src/assets/style/layout/header.scss */ .dashboard header .logout-btn span { padding-left: 2px; }
 
 /* line 79, src/assets/style/layout/header.scss */ .app header { position: fixed; top: 0; left: 0; right: 0; border-bottom: 1px solid #e0e0e0; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08); background-color: #FFFFFF; z-index: 100; padding: 20px; }
 
@@ -1251,14 +587,6 @@
 
 /* line 190, src/assets/style/layout/modal.scss */ .app .modal div[class*="-input"].phone-input input { width: 30%; }
 
-/* line 196, src/assets/style/layout/modal.scss */ .app .modal .data { padding: 10px 0 30px; line-height: 20px; border-bottom: 1px solid #ECECEC; }
-
-/* line 201, src/assets/style/layout/modal.scss */ .app .modal .data-label { width: 80px; padding-right: 5px; color: #1A1E27; }
-
-/* line 207, src/assets/style/layout/modal.scss */ .app .modal .data-value { padding: 0 10px; color: #767D83; }
-
-/* line 211, src/assets/style/layout/modal.scss */ .app .modal .data-value + .data-label { margin-left: 15px; }
-
 /* line 217, src/assets/style/layout/modal.scss */ .app .modal .text-frame { margin-top: 20px; }
 
 /* line 221, src/assets/style/layout/modal.scss */ .app .modal .form { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-direction: column; }
@@ -1274,22 +602,6 @@
 /* line 245, src/assets/style/layout/modal.scss */ .app .modal .form .title.required:after { display: inline; font-size: 12px; content: '*'; color: #F24546; }
 
 /* line 257, src/assets/style/layout/modal.scss */ .app .modal .form input, .dashboard .modal .form select { -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 150px; -ms-flex: 1 1 150px; flex: 1 1 150px; }
-
-/* line 263, src/assets/style/layout/modal.scss */ .app .modal .image-section { width: 100%; border-radius: 15px; padding: 20px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); }
-
-/* line 269, src/assets/style/layout/modal.scss */ .app .modal .image-section .frame { width: 100%; min-height: 460px; }
-
-/* line 273, src/assets/style/layout/modal.scss */ .app .modal .image-section .frame img { max-height: 100%; width: auto; }
-
-/* line 279, src/assets/style/layout/modal.scss */ .app .modal .image-section .btn-group { top: 10px; right: 10px; }
-
-/* line 289, src/assets/style/layout/modal.scss */ .dashboard .verification-complete input[type=checkbox] + label:before { margin-right: 5px; }
-
-/* line 296, src/assets/style/layout/modal.scss */ .dashboard .close-btn { width: 32px; height: 32px; }
-
-/* line 300, src/assets/style/layout/modal.scss */ .dashboard .close-btn.sm { width: 24px; height: 24px; }
-
-/* line 305, src/assets/style/layout/modal.scss */ .dashboard .close-btn .icon-close { width: 100%; height: 100%; }
 
 /* line 1, src/assets/style/layout/login.scss */ .app .member { margin: auto; width: 550px; padding: 50px 60px; background-color: #FFFFFF; border-radius: 15px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); }
 
@@ -1313,81 +625,29 @@
 
 /* line 68, src/assets/style/layout/login.scss */ .app .member .find-result b { font-family: "Pretendard-SemiBold"; color: #5E43F8; }
 
+/*custom lotto*/
+.cbdiv label{ font-size: 20px;}
 
-.cbdiv label{
-	font-size: 20px;
-}
+.lotto_ball { width: 120px; height: 120px; border-radius: 60px; float: left; text-align: center; margin-left: 5px; padding-top : 18px; text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%); font-size: 80px; color: white;}
 
-.lotto_ball {
-	width: 120px;
-	height: 120px;
-	border-radius: 60px;
-	float: left;
-	text-align: center;
-	margin-left: 5px;
-	padding-top : 18px;
-	text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%);
-	font-size: 80px;
-	color: white;
-}
+.lotto_mball { background-color: rgb(251, 196, 0); width: 65px; height: 65px; border-radius: 50px; margin-left: 10px; float: left; font-size: 40px; color: white; text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%); padding-top: 10px;}
 
-.lotto_mball {
-	background-color: rgb(251, 196, 0);
-	width: 65px;
-	height: 65px;						
-	border-radius: 50px;
-	margin-left: 10px;
-	float: left;																	
-	font-size: 40px;
-	color: white;
-	text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%);
-	padding-top: 10px;
-}
+#ball_1 { background-color: rgb(251, 196, 0); /* 0 번대*/}
 
+#ball_2 { background-color: rgb(105, 200, 242); /* 10 번대*/ }
 
-#ball_1 {
-	background-color: rgb(251, 196, 0); /* 0 번대*/
-}
+#ball_3 { background-color: rgb(255, 114, 114); /* 20 번대*/ }
 
-#ball_2 {
-	background-color: rgb(105, 200, 242); /* 10 번대*/
-}
+#ball_4 { background-color: rgb(170, 170, 170); /* 30 번대*/ }
 
-#ball_3 {
-	background-color: rgb(255, 114, 114); /* 20 번대*/
-}
+#ball_5 { background-color: rgb(179, 225, 52); /* 40 번대*/ }
 
-#ball_4 {
-	background-color: rgb(170, 170, 170); /* 30 번대*/
-}
+#ball_6 { background-color: rgb(236, 185, 224); }
 
-#ball_5 {
-	background-color: rgb(179, 225, 52); /* 40 번대*/
-}
+input[type=checkbox] {zoom: 1.5;}
 
-#ball_6 {
-	background-color: rgb(236, 185, 224);
-}
+label{ margin-left: 10px;}
 
-input[type=checkbox] {
-zoom: 1.5;
-}
+.cbdiv{ text-align: center; margin-bottom: 10px; font-size: 25px; font-weight: bold; }
 
-label{
-	margin-left: 10px;
-}
-
-.cbdiv{
-	text-align: center;
-	margin-bottom: 10px;
-	font-size: 25px;
-	font-weight: bold;
-}
-
-
-#lottery, #lastDay, #todayP, #howMuch{
-	font-size: 30px;
-	text-align: right;
-	font-weight: bold;
-}
-
+#lottery, #lastDay, #todayP, #howMuch{font-size: 30px; text-align: right; font-weight: bold; }
