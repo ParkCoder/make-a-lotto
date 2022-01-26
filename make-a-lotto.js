@@ -40,6 +40,9 @@ $(document).ready(function(){
 	
 	//check box show
 	$('input[type="checkbox"]').show();
+	
+	//복사할 텍스트 hide
+	$('#copyzone').hide();
 })
 
 /* 고정번호 선택 popup */
@@ -408,7 +411,7 @@ function fn_game() {
 		games = 'E';
 	}
 	
-	
+	// 로또 번호 테이블
 	var trtd = '<tr style="text-align: center;">';
 	trtd += '<td><h2>' + games + '</h2></td>';
 	trtd += '<td style="text-align: center;">';
@@ -426,7 +429,7 @@ function fn_game() {
 	trtd += '</tr>';
 	
 	
-	
+	//선택번호 확인 팝업 테이블
 	var trtd2 = '<tr>';
 	trtd2 += '<td><h1>' + games + '</h1></td>';
 	trtd2 += '<td colspan="3"><h1>'
@@ -441,12 +444,27 @@ function fn_game() {
 	trtd2 += '</h1></td>'
 	trtd2 += '</tr>';
 	
+	//복사할 번호 text
+	var copytext = '';
+	copytext += '' + games + ' : ';
+	for (var i = 0; i < numbers.length; i++) {
+
+		var lotto_num = numbers[i];
+		var cnt = i + 1;
+		
+		if(i != 5){
+			copytext += numbers[i] + ', ';
+		}else{
+			copytext += numbers[i];
+			copytext += '\n';
+		}
+
+	}
 	
 	
 	
+	$('#copytext').append(copytext);
 	$('#tableBody').append(trtd);
-	
-	
 	$('#tableBody2').append(trtd2);
 
 	for (var i = 0; i < numbers.length; i++) {
@@ -485,6 +503,8 @@ function fn_lotto() {
 	
 	$("#tableBody").html('');
 	$("#tableBody2").html('');
+	$('#copytext').html('');
+	
 	$('#selectDiv').remove();
 	
 	$('#tableDIV').append(selectBtn);
@@ -505,6 +525,8 @@ function fn_change() {
 	html += '</tr>';
 
 	$("#tableBody").html(html);
+	$('#copytext').html('');
+	
 	$('#selectDiv').remove();
 	
 }
@@ -539,12 +561,30 @@ function fn_close() {
 	 $('#selectLotto').hide();
 }
 
+/*번호 복사*/
+function copyNumber() {
+	var text = $('#copytext').html();
+	
+	var area = document.createElement("textarea");
+	
+	document.body.appendChild(area);
+	
+	area.value= text;
+	area.select();
+	
+	document.execCommand("copy");
+	
+	document.body.removeChild(area);
+
+	alert('클립보드에 복사되었습니다.');
+}
+
 /* 인쇄*/
 function printDiv()	{
 	  var divToPrint=document.getElementById('print');
 	  var newWin=window.open('','Print-Window');
 	  newWin.document.open();
-	  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+	  newWin.document.write('<html><body onload="window.print()" style="width:800px;">'+divToPrint.innerHTML+'</body></html>');
 	  newWin.document.close();
 	  setTimeout(function(){newWin.close();},10);
-	}
+}

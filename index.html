@@ -272,7 +272,7 @@
          <div class="modal-title">LOTTO 번호 선택</div>
 		<div class="modal-cont">
 			<div id="print">
-			<div align="center">
+			<div align="right">
 				<p id="todayP"></p>
 				<p id="lottery"></p>
 				<p id="lastDay"></p>
@@ -301,9 +301,14 @@
 				<p id="howMuch"></p>
 				</div>
 			</div>
+			<div id="copyzone">
+				<div id="copytext"></div>
+<!-- 				<textarea id="copytextarea"></textarea> -->
+			</div>
 		</div>
 		   <div class="modal-btn-wrap btn-group">
               <button class="btn" onclick="fn_close()" style="height: 65px; font-size: 23px; font-weight: bold;">확인</button>
+              <button class="btn btn-cancel" onclick="copyNumber()" style="height: 65px; font-size: 23px; font-weight: bold;">복사</button>
               <button class="btn btn-black" onclick="printDiv()" style="height: 65px; font-size: 23px; font-weight: bold;">출력</button>
           </div>
 		</div>
