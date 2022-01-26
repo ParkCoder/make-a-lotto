@@ -565,11 +565,13 @@ function fn_close() {
 function copyNumber() {
 	var text = $('#copytext').html();
 	
+	var result = text.slice(0, -1);
+	
 	var area = document.createElement("textarea");
 	
 	document.body.appendChild(area);
 	
-	area.value= text;
+	area.value= result;
 	area.select();
 	
 	document.execCommand("copy");
