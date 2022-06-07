@@ -1316,7 +1316,7 @@
 /* line 68, src/assets/style/layout/login.scss */ .app .member .find-result b { color: #5E43F8; }
 
 
-.cbdiv label{
+.nbrDiv label{
 	font-size: 20px;
 }
 
@@ -1379,7 +1379,7 @@ label{
 	margin-left: 10px;
 }
 
-.cbdiv{
+.nbrDiv{
 	text-align: center;
 	margin-bottom: 10px;
 	font-size: 25px;
@@ -1387,7 +1387,7 @@ label{
 }
 
 
-#lottery, #lastDay, #todayP, #howMuch{
+#day_issue, #day_lottery, #day_limit, #howMuch{
 	font-size: 30px;
 	text-align: right;
 	font-weight: bold;

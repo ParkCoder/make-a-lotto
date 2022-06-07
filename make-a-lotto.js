@@ -1,179 +1,334 @@
 /**
  * make a lotto . js 
  * park kyung min - 2021
+ * update - 2022.06 (jquery -> javascript)
  */
 
-//게임 번호
-var count = 0;
+//게임 수
+let count = 0;
 
 //고정번호
-var myNum_arr = [];
+let fixNbr_arr = [];
 
 //제외번호
-var notNum_arr = [];
+let excls_arr = [];
 
-//고정번호 갯수
-var chk;
+//고정번호, 제회번호 갯수
+let chk;
 
-$(document).ready(function(){
-	console.log('OPYRIGHT © 2021 Park Kyung Min. ALL RIGHT RESERVED');
-	//고정숫자
-	$("input[name='cb']").on("click", function() {
-		chk = $("input:checked[name='cb']").length;
-		
-		if(chk > 5){
-			$(this).prop("checked",false);
-			alert('5개까지만 선택 가능!');
-		}
-		
-	})
-	
-	//제외숫자
-	$("input[name='nb']").on("click", function() {
-		chk = $("input:checked[name='nb']").length;
-		
- 		if(chk > 20){
-			$(this).prop("checked",false);
-			alert('20개까지만 선택 가능!');
-		}
-	})
-	
-	//check box show
-	$('input[type="checkbox"]').show();
-	
-	//복사할 텍스트 hide
-	$('#copyzone').hide();
-})
+// 로또 번호 테이블 html
+let lottoTableHtml = '';
 
-/* 고정번호 선택 popup */
-function fn_myNum() {
- 	myNum_arr = [];
+//선택번호 팝업 테이블 html
+let selectTableHtml = '';
+
+//복사할 텍스트
+let copytext = '';
+
+
+window.onload = function() {
+	/* console copy right */
+	console.log('COPYRIGHT © 2021 Park Kyung Min. ALL RIGHT RESERVED');
+	
+	/* check box show */
+	const checkBoxs  = document.querySelectorAll("[type='checkbox']");
+	for (let checkBox of checkBoxs) {
+		checkBox.style.display ="inline-block";
+	}
+	
+	/* 복사되는 copyzone display none */
+	const copyzone = document.getElementById("copyzone");
+	copyzone.style.display ="none";
+	
+	
+	
+	/* 고정숫자 (fixNbr) click function */
+	let fixNbrs = document.querySelectorAll("[name='fixNbr']");
+	for (let fixNbr of fixNbrs) {
+		fixNbr.addEventListener('click', fixNbrClick);
+	}
+	
+	/* 제외숫자 (exclsNbr) click function */
+	let exclsNbrs = document.querySelectorAll("[name='exclsNbr']");
+	for (let exclsNbr of exclsNbrs) {
+		exclsNbr.addEventListener('click', exclsNbrClick); 
+	}
+	
+}
+
+/* 고정숫자 5개 이상 선택 X click function */
+function fixNbrClick() {
+	let fixNbrChk = document.querySelectorAll("[name='fixNbr']:checked");
+	chk = fixNbrChk.length;
+	if(chk  > 5){
+		alert('5개까지만 선택 가능합니다!');
+		
+		fixNbrChk.forEach((checkbox) => {
+		    checkbox.checked = false;
+		})
+	}
+}
+
+/* 제외숫자 20개 이상 선택 X click function */
+function exclsNbrClick() {
+	let exclsNbrChk = document.querySelectorAll("[name='exclsNbr']:checked");
+	chk = exclsNbrChk.length;
+	if(chk  > 20){
+		alert('20개까지만 선택 가능합니다!');
+		
+		exclsNbrChk.forEach((checkbox) => {
+	    checkbox.checked = false;
+	  })
+	}
+}
+
+/*
+ * 	고정 번호 팝업 관련 function 
+ * 
+ * */
+
+// 고정번호 팝업
+function fn_fixNbr_pop() {
+ 	fixNbr_arr = [];
  	
- 	/* 제외번호 선택한게 있으면 checkbox disabled */
-	var cbLength = $('input[name="cb"]').length;
-	var notarrylength = notNum_arr.length;
+ 	//제외번호 선택한게 있으면 checkbox disabled
+ 	let fixNbrAll = document.querySelectorAll("[name='fixNbr']");
+ 	let fixNbrLength = fixNbrAll.length;
+ 	
+	let exclsArrlength = excls_arr.length;	//제외 번호 length
 
-	if(notarrylength != 0){
-		for (var i = 1; i <= cbLength; i++) {
+	if(exclsArrlength != 0){
+		for (let i = 1; i <= fixNbrLength; i++) {
 			
-			for (var j = 0; j < notarrylength; j++) {
-				if($('#cb'+i).val() == notNum_arr[j]){
-					$('#cb'+i).prop("disabled","disabled");
+			for (let j = 0; j < exclsArrlength; j++) {
+				
+				let fixNbrId = document.getElementById("fixNbr" + i);
+				
+				if(fixNbrId.value == excls_arr[j]){
+					
+					fixNbrId.disabled = true;
 				}
 			}	
 		}
 	}else{
-		$('input[name="cb"]').removeAttr("disabled");
+		fixNbrAll.forEach((checkbox) => {
+		    checkbox.disabled = false;
+		})
 	}
  	
- 	
-	$('#myNumPop').show();
+	document.getElementById("fixNbrPop").style.display ="block";
 }
 
-/* 고정번호 취소 */
-function fn_cancel() {
-	$("input[name='cb']").prop("checked",false);
-	myNum_arr = [];
+
+// 고정번호 취소
+function fn_cancel_fixNbr() {
+	const checkedLength = document.querySelectorAll("[name='fixNbr']:checked").length //고정번호 checked length
 	
-	var html = '';
+	if(checkedLength > 0){
+		
+		if ( !confirm('선택된 고정번호가 해제됩니다!\n취소하시겠습니까?') ) return false;
+	}
 	
-	$('#myNumDiv').html(html);
-	$('#myNumPop').hide();
+	let fixNbrAll = document.querySelectorAll("[name='fixNbr']");
+	fixNbrAll.forEach((checkbox) => {
+	    checkbox.checked = false;
+	})
+	
+	fixNbr_arr = [];
+	
+	document.getElementById("fixNbrDiv").innerHTML = "";
+	document.getElementById("fixNbrPop").style.display ="none";
 }
 
-/* 고정번호 선택 */
-function fn_ok(){
+
+// 고정번호 선택
+function fn_select_fixNbr(){
 	
-	var check_cb = $("input[name='cb']").is(":checked");
+	const checked_fixNbr = document.querySelectorAll("[name='fixNbr']:checked");
 	
-	if(!check_cb){
-		fn_cancel();
+	if(checked_fixNbr.length == 0){
+		fn_cancel_fixNbr();
 		return false;
 	}
 	
-	$("input:checked[name='cb']").each(function() {
-		var val = $(this).val();
-		myNum_arr.push(val);
-	})
+	for (let checked of checked_fixNbr) {
+		let val = checked.value;
+		fixNbr_arr.push(val);
+	}
 	
-	myNum_arr.sort(function(a, b) {
+	fixNbr_arr.sort(function(a, b) {
 		return a - b;
 	});
 	
-	var html = '<br><h1><i class="fas fa-check-circle"></i>   ' + myNum_arr + '</h1>';
+	let html = '<br><h1><i class="fas fa-check-circle"></i>   ' + fixNbr_arr + '</h1>';
 	
-	$('#myNumDiv').html(html);
-	
-	$('#myNumPop').hide();
+	document.getElementById("fixNbrDiv").innerHTML = html;
+	document.getElementById("fixNbrPop").style.display ="none";
 }
 
 
-/* 제외번호 선택 popup */
-function fn_notNum() {
-	notNum_arr = [];
+/*
+ * 	제외 번호 팝업 관련 function 
+ * 
+ * */
+
+// 제외번호 팝업
+function fn_exclsNbr_pop() {
+	excls_arr = [];
 	
-	/* 고정번호 선택한게 있으면 checkbox disabled */
-	var nbLength = $('input[name="nb"]').length;
-	var myarrylength = myNum_arr.length;
+	// 고정번호 선택한게 있으면 checkbox disabled
+	let exclsNbrAll = document.querySelectorAll("[name='exclsNbr']");
+	let exclsNbrLength = exclsNbrAll.length;
 	
-	if(myarrylength != 0){
-		for (var i = 1; i <= nbLength; i++) {
+	let fixNbrArrlength = fixNbr_arr.length;
+	
+	if(fixNbrArrlength != 0){
+		for (let i = 1; i <= exclsNbrLength; i++) {
 			
-			for (var j = 0; j < myarrylength; j++) {
-				if($('#nb'+i).val() == myNum_arr[j]){
-					$('#nb'+i).prop("disabled","disabled");
+			for (let j = 0; j < fixNbrArrlength; j++) {
+				
+				let exclsNbrId = document.getElementById("exclsNbr" + i);
+				
+				if(exclsNbrId.value == fixNbr_arr[j]){
+					
+					exclsNbrId.disabled = true;
 				}
 			}	
 		}
 	}else{
-		$('input[name="nb"]').removeAttr("disabled");
+		
+		exclsNbrAll.forEach((checkbox) => {
+		    checkbox.disabled = false;
+		})
 	}
-	 
-	$('#notNumPop').show();
+	
+	document.getElementById("exclsNbrPop").style.display ="block";
 }
 
-/* 제외번호 취소 */
-function fn_notNum_cancel() {
-	$("input[name='nb']").prop("checked",false);
-	notNum_arr = [];
+// 제외번호 취소
+function fn_cancel_exclsNbr() {
 	
-	var html = '';
+	const checkedLength = document.querySelectorAll("[name='exclsNbr']:checked").length //제외번호 checked length
 	
-	$('#notNumDiv').html(html);
-	$('#notNumPop').hide();
-}
-
-/* 제외번호 선택 */
-function fn_notNum_ok(){
+	if(checkedLength > 0){
+		
+		if ( !confirm('선택된 제외번호가 해제됩니다!\n취소하시겠습니까?') ) return false;
+	}
 	
-	$("input:checked[name='nb']").each(function() {
-		// disabled 아닌 것만 push	
-		if($(this).attr('disabled') != 'disabled'){
-			var val = $(this).val();
-			notNum_arr.push(val);
-		}
+	
+	let exclsNbrAll = document.querySelectorAll("[name='exclsNbr']");
+	exclsNbrAll.forEach((checkbox) => {
+	    checkbox.checked = false;
 	})
 	
-	notNum_arr.sort(function(a, b) {
-		return a - b;
-	});
+	excls_arr = [];
 	
-	if(notNum_arr.length == 0){
-		 fn_notNum_cancel();
+	document.getElementById("exclsNbrDiv").innerHTML = "";
+	document.getElementById("exclsNbrPop").style.display ="none";
+}
+
+// 제외번호 선택
+function fn_select_exclsNbr(){
+	
+	const checked_exclsNbr = document.querySelectorAll("[name='exclsNbr']:checked");
+	
+	if(checked_exclsNbr.length == 0){
+		fn_cancel_exclsNbr();
 		return false;
 	}
 	
-	var html = '<br><h1><i class="fas fa-times-circle"></i>   ' + notNum_arr + '</h1>';
+	for (let checked of checked_exclsNbr) {
+		let val = checked.value;
+		excls_arr.push(val);
+	}
 	
-	$('#notNumDiv').html(html);
+	excls_arr.sort(function(a, b) {
+		return a - b;
+	});
 	
-	$('#notNumPop').hide();
+	let html = '<br><h1><i class="fas fa-times-circle"></i>   ' + excls_arr + '</h1>';
+	
+	document.getElementById("exclsNbrDiv").innerHTML = html;
+	document.getElementById("exclsNbrPop").style.display ="none";
 }
 
-/* 로또 번호 돌리기 */
-function fn_game() {
+
+/*
+ * 	로또 번호 돌리기
+ * 
+ * */
+
+// append html function
+function appendHtml(el, str) {
+	let div = document.createElement('div');
+	 div.innerHTML = str;
+	 while (div.children.length > 0) {
+		 el.appendChild(div.children[0]);
+	 }
+}
+
+/* 로또 생성 버튼 function */
+function fn_lotto() {
 	
-	var comment = [
+	// 생성번호 관련 html 초기화
+	lottoTableHtml = '';
+	selectTableHtml = '';
+	copytext = '';
+	
+	//게임 수 this function for문 돌때 마다 + 1
+	count = 0;
+	
+	//html 초기화
+	document.getElementById("lottoTable").innerHTML = "";
+	document.getElementById("selectLottoTable").innerHTML = "";
+	document.getElementById("copytext").innerHTML = "";
+	document.getElementById("selectDiv").remove();
+
+	//선택 버튼 생성
+	let selectDiv = '<div id="selectDiv" style="width: 100%; text-align: center;">';
+	selectDiv += '<button id="selectBtn" type="button" class="btn" style="width: 330px; height: 70px; font-size: 23px; font-weight: bold; margin-top: 30px;" onclick="fn_select();">지금 번호 선택</button>';
+	selectDiv += '</div>';
+	appendHtml(document.getElementById("tableDIV"), selectDiv);
+	
+	//select value
+	let game_cnt = document.getElementById("select_game").value;
+	
+	//선택한 게임 수 에 따라 게임 생성됨
+	for (let i = 1; i <= game_cnt; i++) {
+		fn_game();
+	}
+	
+	// 생성번호 관련 html 추가
+	document.getElementById("lottoTable").innerHTML = lottoTableHtml;
+	document.getElementById("selectLottoTable").innerHTML = selectTableHtml;
+	document.getElementById("copytext").innerHTML = copytext;
+	
+	// 숫자별 lotto ball 색상 변경
+	let balls  = document.querySelectorAll(".lotto_mball");
+	
+	for (let ball of balls) {
+		const ballNbr = ball.innerText;
+
+		if (ballNbr < 10) {
+			ball.style.backgroundColor = 'rgb(251, 196, 0)';
+		} else if (ballNbr < 20) {
+			ball.style.backgroundColor = 'rgb(105, 200, 242)';
+		} else if (ballNbr < 30) {
+			ball.style.backgroundColor = 'rgb(255, 114, 114)';
+		} else if (ballNbr < 40) {
+			ball.style.backgroundColor = 'rgb(170, 170, 170)';
+		} else if (ballNbr <= 45) {
+			ball.style.backgroundColor = 'rgb(179, 225, 52)';
+		}
+		
+	}
+}
+
+
+/* 코멘트 생성 */
+function fn_select_comment() {
+	
+	let comments = [
 		'다시하세요 😫',
 		'다시...🤦🏻‍♂️',
 		'이건 안될것같아요..🤦🏻‍♀️',
@@ -215,18 +370,29 @@ function fn_game() {
 		'이건안된다..😭😰',
 		'다른번호..😨😨😨',
 		'🥇🥇🥇🥇🥇🥇🥇🥇🥇🥇'
-		]; // 36개
+		]; // 41개
 	
-	var c_num = Math.floor(Math.random() * 40);
-	$('#ment').text(comment[c_num]);
+	let comment_index = Math.floor(Math.random() * 40);
+	
+	let ment = document.getElementById("ment");
+	ment.innerText = comments[comment_index];
+}
+
+/* 로또 번호 생성 */
+function fn_game() {
+	
+	// 화면에 표시될 코멘트
+	fn_select_comment();
 	
 	
-	var numbers = [];
+	let numbers = [];
 	
-	if(myNum_arr.length == 0 && notNum_arr.length == 0){ //고정번호나 제외번호가 없으면 고냥
+	// 로또 번호 생성 START
+	// 1) 고정번호나 제외번호가 없으면 경우
+	if(fixNbr_arr.length == 0 && excls_arr.length == 0){ 
 		for (i = 1; i <= 6; i++) {
-			var num = Math.floor(Math.random() * 45) + 1; // 1~45 까지
-			if (numbers.indexOf(num) === -1) {			// 앞에랑 중복값 제거
+			let num = Math.floor(Math.random() * 45) + 1; // 1~45 까지
+			if (numbers.indexOf(num) === -1) {			// 앞의 숫자랑 비교해 중복값 제거
 				numbers.push(num);
 			} else {
 				i--;
@@ -237,22 +403,24 @@ function fn_game() {
 		numbers.sort(function(a, b) {
 			return a - b;
 		});
+	
 		
-	} else if(myNum_arr.length != 0 && notNum_arr.length != 0){ // 고정 + 제외 번호
+	// 2) 고정 + 제외 번호
+	} else if (fixNbr_arr.length != 0 && excls_arr.length != 0){ 
 		//로또 1~ 45생성, 고정번호 배열에 넣고, 1~45에서 고정번호+제외번호 제거 하고 랜덤
 		
-		var lottoNum = [];
-		for (var i = 0; i < 45; i++) {
+		let lottoNum = [];
+		for (let i = 0; i < 45; i++) {
 			lottoNum[i] = i + 1 ;
 		}
 		
-		var index;
-		var a_num;
+		let index;
+		let a_num;
 		
 		// 생성번호 배열에서 고정번호 제거, 로또번호에 고정번호 push
- 		for (var i = 0; i < myNum_arr.length; i++) {
+ 		for (let i = 0; i < fixNbr_arr.length; i++) {
 			
- 			a_num = myNum_arr[i];
+ 			a_num = fixNbr_arr[i];
 			
 			index = lottoNum.indexOf(a_num-1+1);
 			
@@ -263,13 +431,13 @@ function fn_game() {
 			numbers.push(a_num);
 		}
 		
-		var index2;
-		var b_num;
+		let index2;
+		let b_num;
 		
 		//제외번호 제거
- 		for (var i = 0; i < notNum_arr.length; i++) {
+ 		for (let i = 0; i < excls_arr.length; i++) {
 			
- 			b_num = notNum_arr[i];
+ 			b_num = excls_arr[i];
 			
 			index2 = lottoNum.indexOf(b_num-1+1);
 			
@@ -278,16 +446,16 @@ function fn_game() {
 			}
 		}
 		
- 		var notNumLeng = notNum_arr.length;
-		var myNumLeng = myNum_arr.length;
-		var leng = notNumLeng + myNumLeng;
+ 		let notNumLeng = excls_arr.length;
+		let myNumLeng = fixNbr_arr.length;
+		let leng = notNumLeng + myNumLeng;
 		
 		// 랜덤값 push, 고정번호 갯수만큼 생성번호에서 빠졌으니 배열크기 45 - 고정번호 길이(= 갯수)
 		for (i = myNumLeng; i < 6; i++) {
 			
-			var num = Math.floor(Math.random() * (45 - leng));
+			let num = Math.floor(Math.random() * (45 - leng));
 			
-			var num2 = lottoNum[num];
+			let num2 = lottoNum[num];
 			
 			if (numbers.indexOf(num2) === -1) {
 				numbers.push(num2);
@@ -300,20 +468,21 @@ function fn_game() {
 			return a - b;
 		});
 		
-	} else if(myNum_arr.length != 0) { //고정번호가 있으면
+	// 3) 고정번호
+	} else if(fixNbr_arr.length != 0) {
 		// 번호생성 (1~45)
-		var lottoNum = [];
-		for (var i = 0; i < 45; i++) {
+		let lottoNum = [];
+		for (let i = 0; i < 45; i++) {
 			lottoNum[i] = i + 1 ;
 		}	
 		
-		var index;
-		var a_num;
+		let index;
+		let a_num;
 		
 		// 생성번호 배열에서 고정번호 제거, 로또번호에 고정번호 push
- 		for (var i = 0; i < myNum_arr.length; i++) {
+ 		for (let i = 0; i < fixNbr_arr.length; i++) {
 			
- 			a_num = myNum_arr[i];
+ 			a_num = fixNbr_arr[i];
 			
 			index = lottoNum.indexOf(a_num-1+1);
 			
@@ -326,14 +495,14 @@ function fn_game() {
 
 		
 		
-		var myNumLeng = myNum_arr.length;
+		let myNumLeng = fixNbr_arr.length;
 		
 		// 랜덤값 push, 고정번호 갯수만큼 생성번호에서 빠졌으니 배열크기 45 - 고정번호 길이(= 갯수)
 		for (i = myNumLeng; i < 6; i++) {
 			
-			var num = Math.floor(Math.random() * (45 - myNumLeng));
+			let num = Math.floor(Math.random() * (45 - myNumLeng));
 			
-			var num2 = lottoNum[num];
+			let num2 = lottoNum[num];
 			
 			if (numbers.indexOf(num2) === -1) {
 				numbers.push(num2);
@@ -346,21 +515,23 @@ function fn_game() {
 		numbers.sort(function(a, b) {
 			return a - b;
 		});
+	
+	// 4) 제외번호
+	} else if(excls_arr.length != 0){ 
 		
-	} else if(notNum_arr.length != 0){ //제외번호가 있으면
 		// 번호 생성 배열 1~45
-		var lottoNum = [];
-		for (var i = 0; i < 45; i++) {
+		let lottoNum = [];
+		for (let i = 0; i < 45; i++) {
 			lottoNum[i] = i + 1 ;
 		}
 		
-		var index;
-		var a_num;
+		let index;
+		let a_num;
 		
 		//제외번호 제거
- 		for (var i = 0; i < notNum_arr.length; i++) {
+ 		for (let i = 0; i < excls_arr.length; i++) {
 			
- 			a_num = notNum_arr[i];
+ 			a_num = excls_arr[i];
 			
 			index = lottoNum.indexOf(a_num-1+1);
 			
@@ -369,14 +540,14 @@ function fn_game() {
 			}
 		}
  		
-		var notNumLeng = notNum_arr.length;
+		let notNumLeng = excls_arr.length;
 		
 		// 랜덤값 push, 고정번호 갯수만큼 생성번호에서 빠졌으니 배열크기 45 - 고정번호 길이(= 갯수)
 		for (i = 0; i < 6; i++) {
 			
-			var num = Math.floor(Math.random() * (45 - notNumLeng));
+			let num = Math.floor(Math.random() * (45 - notNumLeng));
 			
-			var num2 = lottoNum[num];
+			let num2 = lottoNum[num];
 			
 			if (numbers.indexOf(num2) === -1) {
 				numbers.push(num2);
@@ -389,11 +560,13 @@ function fn_game() {
 			return a - b;
 		});
 		
-	}
-
-	// 게임 번호 onclick 시 증가
-	count += 1;
-	var games;
+	}// 로또 번호 생성 END
+	
+	
+	// 화면에 뿌릴 html 생성 START
+	count += 1; // 게임 번호 증가
+	
+	let games;
 	
 	if(count == 1){
 		games = 'A';
@@ -411,46 +584,46 @@ function fn_game() {
 		games = 'E';
 	}
 	
+	let lotto_num;	//로또 번호
+	let cnt;		//구분을 위한 count
+	
 	// 로또 번호 테이블
-	var trtd = '<tr style="text-align: center;">';
-	trtd += '<td><h2>' + games + '</h2></td>';
-	trtd += '<td style="text-align: center;">';
+	lottoTableHtml += '<tr style="text-align: center;">';
+	lottoTableHtml += '<td><h2>' + games + '</h2></td>';
+	lottoTableHtml += '<td style="text-align: center;">';
 
-	for (var i = 0; i < numbers.length; i++) {
+	for (let i = 0; i < numbers.length; i++) {
 
-		var lotto_num = numbers[i];
-		var cnt = i + 1;
+		lotto_num = numbers[i];
+		cnt = i + 1;
 
-		trtd += '<div class="lotto_mball" id="mball_'+ count + cnt + '">'
-				+ numbers[i] + '</div>';
+		lottoTableHtml += '<div class="lotto_mball" id="mball_'+ count + cnt + '">' + numbers[i] + '</div>';
 	}
 
-	trtd += '</td>';
-	trtd += '</tr>';
+	lottoTableHtml += '</td></tr>';
 	
 	
 	//선택번호 확인 팝업 테이블
-	var trtd2 = '<tr>';
-	trtd2 += '<td><h1>' + games + '</h1></td>';
-	trtd2 += '<td colspan="3"><h1>'
-	for (var i = 0; i < numbers.length; i++) {
+	selectTableHtml += '<tr>';
+	selectTableHtml += '<td><h1>' + games + '</h1></td>';
+	selectTableHtml += '<td colspan="3"><h1>'
+	for (let i = 0; i < numbers.length; i++) {
 
-		var lotto_num = numbers[i];
-		var cnt = i + 1;
+		lotto_num = numbers[i];
+		cnt = i + 1;
 
-	trtd2 += numbers[i] + '&ensp; ';
+		selectTableHtml += numbers[i] + '&ensp; ';
 
 	}
-	trtd2 += '</h1></td>'
-	trtd2 += '</tr>';
+	selectTableHtml += '</h1></td></tr>';
 	
 	//복사할 번호 text
-	var copytext = '';
 	copytext += '' + games + ' : ';
-	for (var i = 0; i < numbers.length; i++) {
+	
+	for (let i = 0; i < numbers.length; i++) {
 
-		var lotto_num = numbers[i];
-		var cnt = i + 1;
+		lotto_num = numbers[i];
+		cnt = i + 1;
 		
 		if(i != 5){
 			copytext += numbers[i] + ', ';
@@ -460,114 +633,73 @@ function fn_game() {
 		}
 
 	}
-	
-	
-	
-	$('#copytext').append(copytext);
-	$('#tableBody').append(trtd);
-	$('#tableBody2').append(trtd2);
-
-	for (var i = 0; i < numbers.length; i++) {
-
-		var lotto_num = numbers[i];
-		var cnt = i + 1;
-
-		if (lotto_num < 10) {
-			$('#mball_' + count + cnt + '').css('background-color',
-					'rgb(251, 196, 0)');
-		} else if (lotto_num < 20) {
-			$('#mball_' + count + cnt + '').css('background-color',
-					'rgb(105, 200, 242)');
-		} else if (lotto_num < 30) {
-			$('#mball_' + count + cnt + '').css('background-color',
-					'rgb(255, 114, 114)');
-		} else if (lotto_num < 40) {
-			$('#mball_' + count + cnt + '').css('background-color',
-					'rgb(170, 170, 170)');
-		} else if (lotto_num <= 45) {
-			$('#mball_' + count + cnt + '').css('background-color',
-					'rgb(179, 225, 52)');
-		}
-
-	}
-}
-
-/* 클릭시 game 수에 따라  fn_game 돌아감 */
-function fn_lotto() {
-	
-	count = 0;
-	
-	var selectBtn = '<div id="selectDiv" style="width: 100%; text-align: center;">';
-		selectBtn += '<button id="selectBtn" type="button" class="btn" style="width: 330px; height: 70px; font-size: 23px; font-weight: bold; margin-top: 30px;" onclick="fn_select();">지금 번호 선택</button>';
-		selectBtn += '</div>';
-	
-	$("#tableBody").html('');
-	$("#tableBody2").html('');
-	$('#copytext').html('');
-	
-	$('#selectDiv').remove();
-	
-	$('#tableDIV').append(selectBtn);
-	
-	var game = $('#select_gm').val();
-
-	for (var i = 1; i <= game; i++) {
-		fn_game();
-	}
-	
+	// 화면에 뿌릴 html 생성 END
 }
 
 /* 게임 수 바꾸면 테이블 초기화 */
 function fn_change() {
-	count = 0;
-	var html = '<tr style="text-align: center;">';
-	html += '<td colspan="2" style="font-weight: bold; font-size: 25px;">번호 생성 하기 버튼을 눌러주세요!!</td>';
-	html += '</tr>';
-
-	$("#tableBody").html(html);
-	$('#copytext').html('');
 	
-	$('#selectDiv').remove();
+	// 게임 수 초기화
+	count = 0;
+	
+	// 테이블 html
+	let html = '<tr style="text-align: center;">';
+		html += '<td colspan="2" style="font-weight: bold; font-size: 25px;">번호 생성 하기 버튼을 눌러주세요!!</td>';
+		html += '</tr>';
+
+	// 테이블 초기화
+	document.getElementById("lottoTable").innerHTML = html;
+	
+	//복사 문구 초기화
+	document.getElementById("copytext").innerHTML = '';
+	
+	let selectDiv = '<div id="selectDiv" style="width: 100%; text-align: center;"></div>';
+	appendHtml(document.getElementById("tableDIV"), selectDiv);
+	
+	document.getElementById("selectDiv").remove();
 	
 }
 
-/* 지금 번호 선택 */
+
+/*
+ *  지금 번호 선택
+ * 
+ * */
+/* 지금 번호 선택 팝업 */
 function fn_select() {
 	
-	var now = new Date();
-	var nowDayOfWeek = now.getDay();
-	var nowDay = now.getDate();
-	var nowMonth = now.getMonth()+1;
-	var nowYear = now.getYear();
+	let now = new Date();
+	let nowDayOfWeek = now.getDay();
+	let nowDay = now.getDate();
+	let nowMonth = now.getMonth()+1;
+	let nowYear = now.getYear();
 	
-	var thisWeekSaturday = now.getFullYear()+ "/" +nowMonth + "/" + (nowDay + (6 - nowDayOfWeek)); 
-	var lastday = (now.getFullYear()+1)+ "/" +nowMonth + "/" + (nowDay + (6 - nowDayOfWeek) + 1); 
-	var today = now.getFullYear() + "/" +nowMonth + "/" + nowDay;
+	let thisWeekSaturday = now.getFullYear()+ "/" +nowMonth + "/" + (nowDay + (6 - nowDayOfWeek)); 
+	let lastday = (now.getFullYear()+1)+ "/" +nowMonth + "/" + (nowDay + (6 - nowDayOfWeek) + 1); 
+	let today = now.getFullYear() + "/" +nowMonth + "/" + nowDay;
 	
-	$('#todayP').text("발 행 일 : " + today);
-	$('#lottery').text("추 첨 일 : " + thisWeekSaturday);
-	$('#lastDay').text("지급기한 : " + lastday);
+	document.getElementById("day_issue").innerText = "발 행 일 : " + today;
+	document.getElementById("day_lottery").innerText = "추 첨 일 : " + thisWeekSaturday;
+	document.getElementById("day_limit").innerText = "지급기한 : " + lastday;
 	
+	let game_cnt = document.getElementById("select_game").value;
 	
-	var gm= $("#select_gm").val();
-	
-	$('#howMuch').text('합계 : ' + gm + ',000 원');
-	
-	$('#selectLotto').show();
+	document.getElementById("howMuch").innerText = "합계 : " + game_cnt + ",000 원";
+	document.getElementById("selectLotto").style.display ="block";
 }
 
-/* 번호 확인 닫기*/
+/* 확인 ( 닫기 )*/
 function fn_close() {
-	 $('#selectLotto').hide();
+	document.getElementById("selectLotto").style.display ="none";
 }
 
-/*번호 복사*/
+/* 번호 복사 */
 function copyNumber() {
-	var text = $('#copytext').html();
+	let text = document.getElementById("copytext").innerHTML;
 	
-	var result = text.slice(0, -1);
+	let result = text.slice(0, -1);
 	
-	var area = document.createElement("textarea");
+	let area = document.createElement("textarea");
 	
 	document.body.appendChild(area);
 	
@@ -581,10 +713,10 @@ function copyNumber() {
 	alert('클립보드에 복사되었습니다.');
 }
 
-/* 인쇄*/
+/* 인쇄 */
 function printDiv()	{
-	  var divToPrint=document.getElementById('print');
-	  var newWin=window.open('','Print-Window');
+	  let divToPrint=document.getElementById('print');
+	  let newWin=window.open('','Print-Window');
 	  newWin.document.open();
 	  newWin.document.write('<html><body onload="window.print()" style="width:800px;">'+divToPrint.innerHTML+'</body></html>');
 	  newWin.document.close();

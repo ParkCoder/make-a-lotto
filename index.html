@@ -5,9 +5,6 @@
 <!-- 구글 번역 안켜지게 -->
 <meta name="google" content="notranslate">
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
 <!-- icon -->
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
@@ -29,7 +26,7 @@
 		<div class="flex flex-align-center flex-justify-between">
 			<h1><a href="javascript:location.reload()">&ensp;MAKE A LOTTO.</a></h1>
 			<div class="right-wrap flex flex-align-center">
-				<select id="select_gm" onchange="fn_change()" style="width: 270px; height: 65px; font-size: 20px; font-weight: bold;">
+				<select id="select_game" onchange="fn_change()" style="width: 270px; height: 65px; font-size: 20px; font-weight: bold;">
 					<option value="1">1 GAME (￦ 1,000)</option>
 					<option value="2">2 GAME (￦ 2,000)</option>
 					<option value="3">3 GAME (￦ 3,000)</option>
@@ -82,14 +79,14 @@
 		</div>
 		<div style="width: 100%; text-align: center;">
 			<br>
-			<button type="button" id="btn_1" class="btn btn-black"	onclick="fn_myNum()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">고정 번호</button>
-			<button type="button" id="btn_2" class="btn btn-cancel"	onclick="fn_notNum()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">제외 번호</button>
+			<button type="button" id="btn_1" class="btn btn-black"	onclick="fn_fixNbr_pop()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">고정 번호</button>
+			<button type="button" id="btn_2" class="btn btn-cancel"	onclick="fn_exclsNbr_pop()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">제외 번호</button>
 			<br><br>
 			<a href="#" onclick="javascript:location.reload()" class="mt30" style="font-size: 40px; color: gray; font-weight: bold;">RESET <i class="fas fa-sync"></i></a>
 		</div>
-		<div style="width: 100%; text-align: center;" id="myNumDiv">
+		<div style="width: 100%; text-align: center;" id="fixNbrDiv">
 		</div>
-		<div style="width: 100%; text-align: center;" id="notNumDiv">
+		<div style="width: 100%; text-align: center;" id="exclsNbrDiv">
 		</div>
 		
 <!-- 로또 번호 테이블 -->
@@ -106,19 +103,20 @@
 							<th>나의 추첨번호</th>
 						</tr>
 					</thead>
-					<tbody class="center" id="tableBody">
+					<tbody class="center" id="lottoTable">
 						<tr style="text-align: center;">
 							<td colspan="2" style="font-weight: bold; font-size: 25px;">번호 생성 하기 버튼을 눌러주세요!!</td>
 						</tr>
 					</tbody>
 				</table>
 		</div>
+		<div id="selectDiv" style="width: 100%; text-align: center;"></div>
 </div>	
 
 <!-- POP UP START -->
 
 <!-- 고정번호 선택 pop -->
-<div class="modal llg" id="myNumPop">
+<div class="modal llg" id="fixNbrPop">
 	<div class="modal-box">
 		<div class="modal-wrap">
 			<div class="flex flex-justify-end"></div>
@@ -126,75 +124,75 @@
 			
 			<div class="modal-cont">
 			
-			<div class="cbdiv">
+			<div class="nbrDiv">
 					<p style="font-size: 17px; color: red;">※ 번호 생성시 고정되어 있을 숫자 선택<br>(5개까지만 선택가능)</p><br>
-					<label><input type="checkbox" name="cb" id="cb1" value="1"/>1&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb2" value="2"/>2&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb3" value="3"/>3&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb4" value="4"/>4&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb5" value="5"/>5&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr1" value="1"/>1&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr2" value="2"/>2&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr3" value="3"/>3&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr4" value="4"/>4&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr5" value="5"/>5&nbsp;</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="cb" id="cb6" value="6"/>6&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb7" value="7"/>7&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb8" value="8"/>8&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb9" value="9"/>9&nbsp;</label>
-					<label><input type="checkbox" name="cb" id="cb10" value="10"/>10</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="fixNbr" id="fixNbr6" value="6"/>6&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr7" value="7"/>7&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr8" value="8"/>8&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr9" value="9"/>9&nbsp;</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr10" value="10"/>10</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="cb" id="cb11" value="11"/>11</label>
-					<label><input type="checkbox" name="cb" id="cb12" value="12"/>12</label>
-					<label><input type="checkbox" name="cb" id="cb13" value="13"/>13</label>
-					<label><input type="checkbox" name="cb" id="cb14" value="14"/>14</label>
-					<label><input type="checkbox" name="cb" id="cb15" value="15"/>15</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="fixNbr" id="fixNbr11" value="11"/>11</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr12" value="12"/>12</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr13" value="13"/>13</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr14" value="14"/>14</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr15" value="15"/>15</label>
 				</div>
-				<div class="cbdiv">	
-					<label><input type="checkbox" name="cb" id="cb16" value="16"/>16</label>
-					<label><input type="checkbox" name="cb" id="cb17" value="17"/>17</label>
-					<label><input type="checkbox" name="cb" id="cb18" value="18"/>18</label>
-					<label><input type="checkbox" name="cb" id="cb19" value="19"/>19</label>
-					<label><input type="checkbox" name="cb" id="cb20" value="20"/>20</label>
+				<div class="nbrDiv">	
+					<label><input type="checkbox" name="fixNbr" id="fixNbr16" value="16"/>16</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr17" value="17"/>17</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr18" value="18"/>18</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr19" value="19"/>19</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr20" value="20"/>20</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="cb" id="cb21" value="21"/>21</label>
-					<label><input type="checkbox" name="cb" id="cb22" value="22"/>22</label>
-					<label><input type="checkbox" name="cb" id="cb23" value="23"/>23</label>
-					<label><input type="checkbox" name="cb" id="cb24" value="24"/>24</label>
-					<label><input type="checkbox" name="cb" id="cb25" value="25"/>25</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="fixNbr" id="fixNbr21" value="21"/>21</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr22" value="22"/>22</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr23" value="23"/>23</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr24" value="24"/>24</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr25" value="25"/>25</label>
 				</div>
-				<div class="cbdiv">	
-					<label><input type="checkbox" name="cb" id="cb26" value="26"/>26</label>
-					<label><input type="checkbox" name="cb" id="cb27" value="27"/>27</label>
-					<label><input type="checkbox" name="cb" id="cb28" value="28"/>28</label>
-					<label><input type="checkbox" name="cb" id="cb29" value="29"/>29</label>
-					<label><input type="checkbox" name="cb" id="cb30" value="30"/>30</label>
+				<div class="nbrDiv">	
+					<label><input type="checkbox" name="fixNbr" id="fixNbr26" value="26"/>26</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr27" value="27"/>27</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr28" value="28"/>28</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr29" value="29"/>29</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr30" value="30"/>30</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="cb" id="cb31" value="31"/>31</label>
-					<label><input type="checkbox" name="cb" id="cb32" value="32"/>32</label>
-					<label><input type="checkbox" name="cb" id="cb33" value="33"/>33</label>
-					<label><input type="checkbox" name="cb" id="cb34" value="34"/>34</label>
-					<label><input type="checkbox" name="cb" id="cb35" value="35"/>35</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="fixNbr" id="fixNbr31" value="31"/>31</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr32" value="32"/>32</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr33" value="33"/>33</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr34" value="34"/>34</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr35" value="35"/>35</label>
 				</div>
-				<div class="cbdiv">	
-					<label><input type="checkbox" name="cb" id="cb36" value="36"/>36</label>
-					<label><input type="checkbox" name="cb" id="cb37" value="37"/>37</label>
-					<label><input type="checkbox" name="cb" id="cb38" value="38"/>38</label>
-					<label><input type="checkbox" name="cb" id="cb39" value="39"/>39</label>
-					<label><input type="checkbox" name="cb" id="cb40" value="40"/>40</label>
+				<div class="nbrDiv">	
+					<label><input type="checkbox" name="fixNbr" id="fixNbr36" value="36"/>36</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr37" value="37"/>37</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr38" value="38"/>38</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr39" value="39"/>39</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr40" value="40"/>40</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="cb" id="cb41" value="41"/>41</label>
-					<label><input type="checkbox" name="cb" id="cb42" value="42"/>42</label>
-					<label><input type="checkbox" name="cb" id="cb43" value="43"/>43</label>
-					<label><input type="checkbox" name="cb" id="cb44" value="44"/>44</label>
-					<label><input type="checkbox" name="cb" id="cb45" value="45"/>45</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="fixNbr" id="fixNbr41" value="41"/>41</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr42" value="42"/>42</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr43" value="43"/>43</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr44" value="44"/>44</label>
+					<label><input type="checkbox" name="fixNbr" id="fixNbr45" value="45"/>45</label>
 				</div>
 	
 			</div>
 		   <div class="modal-btn-wrap btn-group">
-              <button class="btn" onclick="fn_ok()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
-              <button class="btn btn-cancel" onclick="fn_cancel()" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
+              <button class="btn" onclick="fn_select_fixNbr()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
+              <button class="btn btn-cancel" onclick="fn_cancel_fixNbr()" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
           </div>
 		</div>
 		<div class="dim"></div>
@@ -203,80 +201,80 @@
 
 		
 <!-- 제외번호 선택 pop -->
-<div class="modal llg" id="notNumPop">
+<div class="modal llg" id="exclsNbrPop">
 	<div class="modal-box">
 		<div class="modal-wrap">
 			<div class="flex flex-justify-end"></div>
 			<div class="modal-title">제외번호 선택</div>
 			<div class="modal-cont">
-				<div class="cbdiv">
+				<div class="nbrDiv">
 					<p style="font-size: 17px; color: red;">※ 번호 생성시 제외할 숫자 선택<br>(20개까지만 선택가능)</p><br>
-					<label><input type="checkbox" name="nb" id="nb1" value="1"/>1&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb2" value="2"/>2&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb3" value="3"/>3&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb4" value="4"/>4&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb5" value="5"/>5&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr1" value="1"/>1&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr2" value="2"/>2&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr3" value="3"/>3&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr4" value="4"/>4&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr5" value="5"/>5&nbsp;</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="nb" id="nb6" value="6"/>6&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb7" value="7"/>7&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb8" value="8"/>8&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb9" value="9"/>9&nbsp;</label>
-					<label><input type="checkbox" name="nb" id="nb10" value="10"/>10</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr6" value="6"/>6&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr7" value="7"/>7&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr8" value="8"/>8&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr9" value="9"/>9&nbsp;</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr10" value="10"/>10</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="nb" id="nb11" value="11"/>11</label>
-					<label><input type="checkbox" name="nb" id="nb12" value="12"/>12</label>
-					<label><input type="checkbox" name="nb" id="nb13" value="13"/>13</label>
-					<label><input type="checkbox" name="nb" id="nb14"  value="14"/>14</label>
-					<label><input type="checkbox" name="nb" id="nb15" value="15"/>15</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr11" value="11"/>11</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr12" value="12"/>12</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr13" value="13"/>13</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr14"  value="14"/>14</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr15" value="15"/>15</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="nb" id="nb16" value="16"/>16</label>
-					<label><input type="checkbox" name="nb" id="nb17" value="17"/>17</label>
-					<label><input type="checkbox" name="nb" id="nb18" value="18"/>18</label>
-					<label><input type="checkbox" name="nb" id="nb19" value="19"/>19</label>
-					<label><input type="checkbox" name="nb" id="nb20" value="20"/>20</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr16" value="16"/>16</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr17" value="17"/>17</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr18" value="18"/>18</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr19" value="19"/>19</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr20" value="20"/>20</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="nb" id="nb21" value="21"/>21</label>
-					<label><input type="checkbox" name="nb" id="nb22" value="22"/>22</label>
-					<label><input type="checkbox" name="nb" id="nb23" value="23"/>23</label>
-					<label><input type="checkbox" name="nb" id="nb24" value="24"/>24</label>
-					<label><input type="checkbox" name="nb" id="nb25" value="25"/>25</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr21" value="21"/>21</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr22" value="22"/>22</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr23" value="23"/>23</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr24" value="24"/>24</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr25" value="25"/>25</label>
 				</div>
-				<div class="cbdiv">		
-					<label><input type="checkbox" name="nb" id="nb26" value="26"/>26</label>
-					<label><input type="checkbox" name="nb" id="nb27" value="27"/>27</label>
-					<label><input type="checkbox" name="nb" id="nb28" value="28"/>28</label>
-					<label><input type="checkbox" name="nb" id="nb29" value="29"/>29</label>
-					<label><input type="checkbox" name="nb" id="nb30" value="30"/>30</label>
+				<div class="nbrDiv">		
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr26" value="26"/>26</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr27" value="27"/>27</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr28" value="28"/>28</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr29" value="29"/>29</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr30" value="30"/>30</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="nb" id="nb31" value="31"/>31</label>
-					<label><input type="checkbox" name="nb" id="nb32" value="32"/>32</label>
-					<label><input type="checkbox" name="nb" id="nb33" value="33"/>33</label>
-					<label><input type="checkbox" name="nb" id="nb34" value="34"/>34</label>
-					<label><input type="checkbox" name="nb" id="nb35" value="35"/>35</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr31" value="31"/>31</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr32" value="32"/>32</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr33" value="33"/>33</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr34" value="34"/>34</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr35" value="35"/>35</label>
 				</div>
-				<div class="cbdiv">	
-					<label><input type="checkbox" name="nb" id="nb36" value="36"/>36</label>
-					<label><input type="checkbox" name="nb" id="nb37" value="37"/>37</label>
-					<label><input type="checkbox" name="nb" id="nb38" value="38"/>38</label>
-					<label><input type="checkbox" name="nb" id="nb39" value="39"/>39</label>
-					<label><input type="checkbox" name="nb" id="nb40" value="40"/>40</label>
+				<div class="nbrDiv">	
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr36" value="36"/>36</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr37" value="37"/>37</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr38" value="38"/>38</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr39" value="39"/>39</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr40" value="40"/>40</label>
 				</div>
-				<div class="cbdiv">
-					<label><input type="checkbox" name="nb" id="nb41" value="41"/>41</label>
-					<label><input type="checkbox" name="nb" id="nb42" value="42"/>42</label>
-					<label><input type="checkbox" name="nb" id="nb43" value="43"/>43</label>
-					<label><input type="checkbox" name="nb" id="nb44" value="44"/>44</label>
-					<label><input type="checkbox" name="nb" id="nb45" value="45"/>45</label>
+				<div class="nbrDiv">
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr41" value="41"/>41</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr42" value="42"/>42</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr43" value="43"/>43</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr44" value="44"/>44</label>
+					<label><input type="checkbox" name="exclsNbr" id="exclsNbr45" value="45"/>45</label>
 				</div>
 			</div>
 			<div class="modal-btn-wrap btn-group">
-              <button class="btn" onclick="fn_notNum_ok()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
-              <button class="btn btn-cancel" onclick="fn_notNum_cancel();" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
+              <button class="btn" onclick="fn_select_exclsNbr()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
+              <button class="btn btn-cancel" onclick="fn_cancel_exclsNbr();" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
           </div>
 		</div>
 		<div class="dim"></div>
@@ -292,9 +290,9 @@
 		<div class="modal-cont">
 			<div id="print">
 			<div align="right">
-				<p id="todayP"></p>
-				<p id="lottery"></p>
-				<p id="lastDay"></p>
+				<p id="day_issue"></p>
+				<p id="day_lottery"></p>
+				<p id="day_limit"></p>
 			</div>
 			
 			<div style="margin-top: 60px;">
@@ -305,7 +303,7 @@
 						<col width="450px">
 						<col width="*">
 					</colgroup>
-					<tbody class="center" id="tableBody2">
+					<tbody class="center" id="selectLottoTable">
 						<tr>
 							<td></td>
 							<td></td>
@@ -322,7 +320,6 @@
 			</div>
 			<div id="copyzone">
 				<div id="copytext"></div>
-<!-- 				<textarea id="copytextarea"></textarea> -->
 			</div>
 		</div>
 		   <div class="modal-btn-wrap btn-group">
