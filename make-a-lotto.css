@@ -1,6 +1,6 @@
 /*css*/
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 *{font-family: 'Noto Sans KR', sans-serif;}
 
@@ -65,7 +65,7 @@
 
 /* line 311, src/assets/style/base/_mixin.scss */ input[type="file"], textarea[type="file"], select[type="file"] { display: none; }
 
-/* line 24, src/assets/style/base/_common.scss */ input:focus, textarea:focus, select:focus { border-color: #5E43F8; }
+/* line 24, src/assets/style/base/_common.scss */ input:focus, textarea:focus, select:focus { border-color: #3158b5; }
 
 /* line 26, src/assets/style/base/_common.scss */ input:focus::placeholder, textarea:focus::placeholder, select:focus::placeholder { color: 15px; }
 
@@ -317,7 +317,7 @@
 
 /* line 257, src/assets/style/base/_common.scss */ .warning-text:before { position: absolute; left: 0; top: 50%; transform: translateY(-50%); content: '※'; display: block; }
 
-/* line 267, src/assets/style/base/_common.scss */ .color-primary { color: #5E43F8; }
+/* line 267, src/assets/style/base/_common.scss */ .color-primary { color: #3158b5; }
 
 /* line 271, src/assets/style/base/_common.scss */ .color-green { color: #28BCA1; }
 
@@ -455,11 +455,11 @@
 
 /* line 283, src/assets/style/base/_jquery-reset.scss */ .mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail { background-color: #ECECEC; }
 
-/* line 286, src/assets/style/base/_jquery-reset.scss */ .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger_onDrag .mCSB_dragger_bar:active, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:active { background-color: #5E43F8; }
+/* line 286, src/assets/style/base/_jquery-reset.scss */ .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger_onDrag .mCSB_dragger_bar:active, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:active { background-color: #3158b5; }
 
 /* line 3, src/assets/style/base/_component.scss */ .dashboard a.btn { line-height: 20px; }
 
-/* line 6, src/assets/style/base/_component.scss */ .dashboard .btn { display: -webkit-inline-box; display: -moz-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; padding: 10px 20px; border-radius: 10px; background-color: #5E43F8; background-repeat: no-repeat; background-position: center; background-size: auto; font-size: 15px; color: #FFFFFF; cursor: pointer; line-height: 20px; }
+/* line 6, src/assets/style/base/_component.scss */ .dashboard .btn { display: -webkit-inline-box; display: -moz-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; padding: 10px 20px; border-radius: 10px; background-color: #3158b5; background-repeat: no-repeat; background-position: center; background-size: auto; font-size: 15px; color: #FFFFFF; cursor: pointer; line-height: 20px; }
 
 /* line 326, src/assets/style/base/_mixin.scss */ .dashboard .btn:hover, .dashboard .btn:active, .dashboard .btn:visited { color: #FFFFFF; }
 
@@ -477,7 +477,7 @@
 
 /* line 29, src/assets/style/base/_component.scss */ .dashboard .btn.btn-excel { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #107C41; background-image: url("../images/icon-excel.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
 
-/* line 36, src/assets/style/base/_component.scss */ .dashboard .btn.btn-download { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #5E43F8; background-image: url("../images/icon-download.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
+/* line 36, src/assets/style/base/_component.scss */ .dashboard .btn.btn-download { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #3158b5; background-image: url("../images/icon-download.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
 
 /* line 44, src/assets/style/base/_component.scss */ .dashboard .txt-btn { font-size: 14px; }
 
@@ -485,7 +485,7 @@
 
 /* line 49, src/assets/style/base/_component.scss */ .dashboard .txt-btn.btn-gray { color: #AAAAAA; }
 
-/* line 52, src/assets/style/base/_component.scss */ .dashboard .txt-btn.btn-primary { color: #5E43F8; }
+/* line 52, src/assets/style/base/_component.scss */ .dashboard .txt-btn.btn-primary { color: #3158b5; }
 
 /* line 57, src/assets/style/base/_component.scss */ .dashboard [class^=icon-] { display: inline-block; width: 20px; height: 20px; }
 
@@ -635,7 +635,7 @@
 
 /* line 341, src/assets/style/base/_component.scss */ .dashboard .pagination .num { margin: 0 2px; text-align: center; line-height: 30px; color: #767D83; }
 
-/* line 347, src/assets/style/base/_component.scss */ .dashboard .pagination .num.active { border-radius: 50%; background-color: #5E43F8; color: #FFFFFF; }
+/* line 347, src/assets/style/base/_component.scss */ .dashboard .pagination .num.active { border-radius: 50%; background-color: #3158b5; color: #FFFFFF; }
 
 /* line 355, src/assets/style/base/_component.scss */ .dashboard .calendar { width: 500px; padding: 30px; border-radius: 15px; border: 1px solid #ECECEC; background-color: #FFFFFF; }
 
@@ -653,9 +653,9 @@
 
 /* line 381, src/assets/style/base/_component.scss */ .dashboard .calendar-date-default { width: 50px; height: 50px; border-radius: 50%; color: #767D83; }
 
-/* line 387, src/assets/style/base/_component.scss */ .dashboard .calendar-date-today { color: #5E43F8; background-color: #E7E3FF; }
+/* line 387, src/assets/style/base/_component.scss */ .dashboard .calendar-date-today { color: #3158b5; background-color: #E7E3FF; }
 
-/* line 391, src/assets/style/base/_component.scss */ .dashboard .calendar-date-active { background-color: #5E43F8; color: #FFFFFF; }
+/* line 391, src/assets/style/base/_component.scss */ .dashboard .calendar-date-active { background-color: #3158b5; color: #FFFFFF; }
 
 /* line 395, src/assets/style/base/_component.scss */ .dashboard .calendar table { width: 100%; }
 
@@ -693,7 +693,7 @@
 
 /* line 475, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file:hover { background-color: #F5F8FF; background-repeat: no-repeat; background-position: center; background-size: auto; }
 
-/* line 478, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file.is-active { background-color: #5E43F8; background-repeat: no-repeat; background-position: center; background-size: auto; color: #FFFFFF; }
+/* line 478, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file.is-active { background-color: #3158b5; background-repeat: no-repeat; background-position: center; background-size: auto; color: #FFFFFF; }
 
 /* line 482, src/assets/style/base/_component.scss */ .dashboard .file-list.edit-type .file-item { margin-top: 0; padding-right: 10px; }
 
@@ -719,7 +719,7 @@
 
 /* line 543, src/assets/style/base/_component.scss */ .app a.btn { line-height: 20px; }
 
-/* line 547, src/assets/style/base/_component.scss */ .app .btn { display: -webkit-inline-box; display: -moz-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; padding: 10px 20px; border-radius: 10px; background-color: #5E43F8; background-repeat: no-repeat; background-position: center; background-size: auto; font-size: 15px; color: #FFFFFF; cursor: pointer; padding: 14px 20px; line-height: 20px; }
+/* line 547, src/assets/style/base/_component.scss */ .app .btn { display: -webkit-inline-box; display: -moz-inline-box; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; padding: 10px 20px; border-radius: 10px; background-color: #3158b5; background-repeat: no-repeat; background-position: center; background-size: auto; font-size: 15px; color: #FFFFFF; cursor: pointer; padding: 14px 20px; line-height: 20px; }
 
 /* line 326, src/assets/style/base/_mixin.scss */ .app .btn:hover, .app .btn:active, .app .btn:visited { color: #FFFFFF; }
 
@@ -737,7 +737,7 @@
 
 /* line 572, src/assets/style/base/_component.scss */ .app .btn.btn-excel { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #107C41; background-image: url("../images/icon-excel.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
 
-/* line 579, src/assets/style/base/_component.scss */ .app .btn.btn-download { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #5E43F8; background-image: url("../images/icon-download.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
+/* line 579, src/assets/style/base/_component.scss */ .app .btn.btn-download { padding-left: 49px; border: 1px solid #ECECEC; background-color: #FFFFFF; color: #3158b5; background-image: url("../images/icon-download.png"); background-repeat: no-repeat; background-position: center left 20px; background-size: 24px; }
 
 /* line 586, src/assets/style/base/_component.scss */ .app .btn.band-btn { padding-left: 79px; background-color: #21C531; background-image: url("../images/icon-band-white.png"); background-repeat: no-repeat; background-position: center left 18px; background-size: 56px; }
 
@@ -749,7 +749,7 @@
 
 /* line 601, src/assets/style/base/_component.scss */ .app .txt-btn.btn-gray { color: #AAAAAA; }
 
-/* line 604, src/assets/style/base/_component.scss */ .app .txt-btn.btn-primary { color: #5E43F8; }
+/* line 604, src/assets/style/base/_component.scss */ .app .txt-btn.btn-primary { color: #3158b5; }
 
 /* line 607, src/assets/style/base/_component.scss */ .app .txt-btn.btn-black { color: #1A1E27; }
 
@@ -889,7 +889,7 @@
 
 /* line 57, src/assets/style/layout/layout.scss */ .dashboard .title-wrap .title { line-height: 30px; font-size: 19px; }
 
-/* line 62, src/assets/style/layout/layout.scss */ .dashboard .title-wrap .sub-title { font-size: 17px; color: #5E43F8; }
+/* line 62, src/assets/style/layout/layout.scss */ .dashboard .title-wrap .sub-title { font-size: 17px; color: #3158b5; }
 
 /* line 69, src/assets/style/layout/layout.scss */ .dashboard .main-image-section, .dashboard .quick-link-section { width: calc(50% - 15px); -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 1; -ms-flex: 1 1 1; flex: 1 1 1; }
 
@@ -919,7 +919,7 @@
 
 /* line 136, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link-name { display: inline-block; margin-top: 15px; padding-right: 23px; color: #767D83; line-height: 20px; font-size: 15px; letter-spacing: -0.5px; background-image: url("../images/mypage-arrow.png"); background-repeat: no-repeat; background-position: center right; background-size: 20px; }
 
-/* line 146, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link:hover { background-color: #5E43F8; }
+/* line 146, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link:hover { background-color: #3158b5; }
 
 /* line 148, src/assets/style/layout/layout.scss */ .dashboard .quick-link-section .link:hover .link-name { color: #FFFFFF; background-image: url("../images/mypage-arrow-white.png"); background-repeat: no-repeat; background-position: center right; background-size: 20px; }
 
@@ -969,7 +969,7 @@
 
 /* line 246, src/assets/style/layout/layout.scss */ .dashboard .form .title-label.required:after { display: inline; font-size: 12px; content: '*'; color: #F24546; }
 
-/* line 257, src/assets/style/layout/layout.scss */ .dashboard .form .small-label { width: 110px; margin-right: 5px; font-size: 13px;  color: #5E43F8; }
+/* line 257, src/assets/style/layout/layout.scss */ .dashboard .form .small-label { width: 110px; margin-right: 5px; font-size: 13px;  color: #3158b5; }
 
 /* line 268, src/assets/style/layout/layout.scss */ .app.overflow-hidden { overflow: hidden; }
 
@@ -1049,7 +1049,7 @@
 
 /* line 430, src/assets/style/layout/layout.scss */ .app .admin-toggle { padding: 13px 15px; border-radius: 10px; background-color: #F5F8FF; margin-bottom: 30px; }
 
-/* line 436, src/assets/style/layout/layout.scss */ .app .admin-toggle.is-active .admin { color: #5E43F8; }
+/* line 436, src/assets/style/layout/layout.scss */ .app .admin-toggle.is-active .admin { color: #3158b5; }
 
 /* line 442, src/assets/style/layout/layout.scss */ .app .admin-onoff input + .admin-toggle-btn { position: relative; width: 58px; height: 30px; padding: 1px; display: block; transition: all 0.4s ease; background-color: #AAAAAA; border-radius: 15px; }
 
@@ -1111,9 +1111,9 @@
 
 /* line 39, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth a:hover span:after { position: absolute; width: 100%; transition: all ease-in-out 0.2s; }
 
-/* line 45, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth.is-active a { background-color: #F5F8FF; color: #5E43F8; }
+/* line 45, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth.is-active a { background-color: #F5F8FF; color: #3158b5; }
 
-/* line 49, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth.is-active a:hover span:after { background-color: #5E43F8; }
+/* line 49, src/assets/style/layout/lnb.scss */ .menu-list-wrap .one-depth.is-active a:hover span:after { background-color: #3158b5; }
 
 /* line 1, src/assets/style/layout/rnb.scss */ .app .rnb { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 300; display: none; }
 
@@ -1127,7 +1127,7 @@
 
 /* line 36, src/assets/style/layout/rnb.scss */ .app .rnb-list .one-depth a { display: block; padding: 15px 20px; padding-right: 0; line-height: 20px; }
 
-/* line 41, src/assets/style/layout/rnb.scss */ .app .rnb-list .one-depth.is-active a { background-color: #F5F8FF; color: #5E43F8; }
+/* line 41, src/assets/style/layout/rnb.scss */ .app .rnb-list .one-depth.is-active a { background-color: #F5F8FF; color: #3158b5; }
 
 /* line 49, src/assets/style/layout/rnb.scss */ .app .rnb-outlink { margin: 15px 20px; margin-bottom: 0; border-top: 1px solid #ECECEC; }
 
@@ -1141,7 +1141,7 @@
 
 /* line 13, src/assets/style/layout/navigation.scss */ .apps .navigation .one-depth { -webkit-box: 1; -moz-box: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
 
-/* line 15, src/assets/style/layout/navigation.scss */ .apps .navigation .one-depth.is-active .name { color: #5E43F8; }
+/* line 15, src/assets/style/layout/navigation.scss */ .apps .navigation .one-depth.is-active .name { color: #3158b5; }
 
 /* line 19, src/assets/style/layout/navigation.scss */ .apps .navigation a, .apps .navigation button { width: 100%; padding: 17px 0; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; font-size: 12px; }
 
@@ -1194,8 +1194,6 @@
 /* line 12, src/assets/style/layout/modal.scss */ .app .modal-box { position: fixed; width: 100%; height: 100%; overflow-y: auto; }
 
 /* line 22, src/assets/style/layout/modal.scss */ .app .modal .dim { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: rgba(26, 30, 39, 0.6); z-index: -1; }
-
-/* line 31, src/assets/style/layout/modal.scss */ .app .modal .dim:hover { cursor: pointer; }
 
 /* line 36, src/assets/style/layout/modal.scss */ .app .modal-wrap { width: 420px; min-height: 270px; margin: 10% auto 20px; padding: 30px; background-color: #fff; border-radius: 20px; }
 
@@ -1297,7 +1295,7 @@
 
 /* line 14, src/assets/style/layout/login.scss */ .app .member .title { margin-bottom: 40px; font-size: 20px; text-align: left; color: #767D83; }
 
-/* line 21, src/assets/style/layout/login.scss */ .app .member .sub-title { margin-bottom: 15px; font-size: 19px; text-align: left; color: #5E43F8; }
+/* line 21, src/assets/style/layout/login.scss */ .app .member .sub-title { margin-bottom: 15px; font-size: 19px; text-align: left; color: #3158b5; }
 
 /* line 28, src/assets/style/layout/login.scss */ .app .member .description { text-align: center; color: #767D83; }
 
@@ -1313,11 +1311,11 @@
 
 /* line 61, src/assets/style/layout/login.scss */ .app .member .find-result p { margin-top: 20px; text-align: center; font-size: 17px; line-height: 1.42; color: #767D83; }
 
-/* line 68, src/assets/style/layout/login.scss */ .app .member .find-result b { color: #5E43F8; }
+/* line 68, src/assets/style/layout/login.scss */ .app .member .find-result b { color: #3158b5; }
 
 
 .nbrDiv label{
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .lotto_ball {
@@ -1372,7 +1370,7 @@
 }
 
 input[type=checkbox] {
-zoom: 1.5;
+zoom: 2;
 }
 
 label{
