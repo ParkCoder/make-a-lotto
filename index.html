@@ -79,8 +79,8 @@
 		</div>
 		<div style="width: 100%; text-align: center;">
 			<br>
-			<button type="button" id="btn_1" class="btn btn-black"	onclick="fn_fixNbr_pop()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">고정 번호</button>
-			<button type="button" id="btn_2" class="btn btn-cancel"	onclick="fn_exclsNbr_pop()" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">제외 번호</button>
+			<button type="button" id="btn_1" class="btn btn-black"	onclick="fn_nbr_pop('fixNbr')" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">고정 번호</button>
+			<button type="button" id="btn_2" class="btn btn-cancel"	onclick="fn_nbr_pop('exclsNbr')" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">제외 번호</button>
 			<br><br>
 			<a href="#" onclick="javascript:location.reload()" class="mt30" style="font-size: 40px; color: gray; font-weight: bold;">RESET <i class="fas fa-sync"></i></a>
 		</div>
@@ -191,8 +191,8 @@
 	
 			</div>
 		   <div class="modal-btn-wrap btn-group">
-              <button class="btn" onclick="fn_select_fixNbr()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
-              <button class="btn btn-cancel" onclick="fn_cancel_fixNbr()" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
+              <button class="btn" onclick="fn_select_nbr('fixNbr')" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
+              <button class="btn btn-cancel" onclick="fn_cancel_nbr('fixNbr')" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
           </div>
 		</div>
 		<div class="dim"></div>
@@ -273,8 +273,8 @@
 				</div>
 			</div>
 			<div class="modal-btn-wrap btn-group">
-              <button class="btn" onclick="fn_select_exclsNbr()" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
-              <button class="btn btn-cancel" onclick="fn_cancel_exclsNbr();" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
+              <button class="btn" onclick="fn_select_nbr('exclsNbr')" style="height: 65px; font-size: 23px; font-weight: bold;">선택</button>
+              <button class="btn btn-cancel" onclick="fn_cancel_nbr('exclsNbr');" style="height: 65px; font-size: 23px; font-weight: bold;">취소</button>
           </div>
 		</div>
 		<div class="dim"></div>
