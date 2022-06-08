@@ -808,9 +808,10 @@ label{ margin-left: 10px; }
 #pay, #howMuch{ font-size: 30px; font-weight: bold; width: 355px; display: inline-block;}
 [name=dot], #day_issue, #day_lottery, #day_limit{ font-size: 28px; text-align: left; font-weight: bold;}
 [name=dayTag] {font-size: 28px; text-align: left; font-weight: bold; margin-left:25px; display: inline-block; width: 130px;}
-#print p { margin-top: 0px !important; margin-bottom: 0 !important; }
+#resultView p { margin-top: 0px !important; margin-bottom: 0 !important; }
 #selectTalbeDiv{ margin-top: 0px; padding-left: 30px; }
 #selectLottoTable span, #selectTalbeDiv span{ font-size: 28px; font-weight: bold;}
+
 /* footer */
 [name=i_footer]{ color: gray; font-size: 40px; }
 [name=i_name]{ font-weight: bold; font-size: 18px; }

@@ -22,6 +22,9 @@ let lottoTableHtml = '';
 //선택번호 팝업 테이블 html
 let selectTableHtml = '';
 
+//선택번호 프린트 테이블 html
+let printTableHtml = '';
+
 //복사할 텍스트
 let copytext = '';
 
@@ -225,6 +228,7 @@ function fn_lotto() {
 	// 생성번호 관련 html 초기화
 	lottoTableHtml = '';
 	selectTableHtml = '';
+	printTableHtml = '';
 	copytext = '';
 	
 	//게임 수 this function for문 돌때 마다 + 1
@@ -253,6 +257,7 @@ function fn_lotto() {
 	// 생성번호 관련 html 추가
 	document.getElementById("lottoTable").innerHTML = lottoTableHtml;
 	document.getElementById("selectLottoTable").innerHTML = selectTableHtml;
+	document.getElementById("printLottoTb").innerHTML = printTableHtml;
 	document.getElementById("copytext").innerHTML = copytext;
 	
 	// 숫자별 lotto ball 색상 변경
@@ -520,21 +525,11 @@ function fn_game() {
 	
 	let games;
 	
-	if(count == 1){
-		games = 'A';
-	}
-	if(count == 2){
-		games = 'B';
-	}
-	if(count == 3){
-		games = 'C';
-	}
-	if(count == 4){
-		games = 'D';
-	}
-	if(count == 5){
-		games = 'E';
-	}
+	if(count == 1){	games = 'A'; }
+	if(count == 2){	games = 'B'; }
+	if(count == 3){	games = 'C'; }
+	if(count == 4){ games = 'D'; }
+	if(count == 5){	games = 'E'; }
 	
 	let lotto_num;	//로또 번호
 	let cnt;		//구분을 위한 count
@@ -568,6 +563,22 @@ function fn_game() {
 
 	}
 	selectTableHtml += '</td></tr>';
+	
+	
+	
+	//프린트 div 테이블
+	printTableHtml += '<tr>';
+	printTableHtml += '<td><span>' + games + '</span></td>';
+	printTableHtml += '<td>'
+	for (let i = 0; i < numbers.length; i++) {
+
+		lotto_num = numbers[i];
+		cnt = i + 1;
+
+		printTableHtml += '<span class="wd80" style="display:inline-block;">' + ('0' + numbers[i]).slice(-2) + '&emsp;</span>';
+
+	}
+	printTableHtml += '</td></tr>';
 	
 	//복사할 번호 text
 	copytext += '' + games + ' : ';
@@ -635,13 +646,22 @@ function fn_select() {
 	let today = now.getFullYear() + "/" +nowMonth + "/" + ('0' + nowDay).slice(-2);									 // 발행일
 	let resultTime = hours + ':' + minutes  + ':' + seconds;
 	
+	//show div
 	document.getElementById("day_issue").innerText = today + " " + weekday[nowDayOfWeek] + " " + resultTime;
 	document.getElementById("day_lottery").innerText = thisWeekSaturday + " " +weekday[6];
 	document.getElementById("day_limit").innerText = lastday;
 	
-	let game_cnt = document.getElementById("select_game").value;
+	//print div
+	document.getElementById("p_day_issue").innerText = today + " " + weekday[nowDayOfWeek] + " " + resultTime;
+	document.getElementById("p_day_lottery").innerText = thisWeekSaturday + " " +weekday[6];
+	document.getElementById("p_day_limit").innerText = lastday;
 	
+	let game_cnt = document.getElementById("select_game").value;
+	//show div
 	document.getElementById("howMuch").innerText = "￦ " + game_cnt + ",000";
+	//print div
+	document.getElementById("p_howMuch").innerText = "￦ " + game_cnt + ",000";
+	
 	document.getElementById("selectLotto").style.display ="block";
 }
 

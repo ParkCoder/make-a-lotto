@@ -114,7 +114,6 @@
 </div>	
 
 <!-- POP UP START -->
-
 <!-- 고정번호 선택 pop -->
 <div class="modal llg" id="fixNbrPop">
 	<div class="modal-box">
@@ -288,7 +287,7 @@
 		 <div class="flex flex-justify-end"></div>
          <div class="modal-title">LOTTO 번호 선택</div>
 		<div class="modal-cont">
-			<div id="print" class="mt50 mb40">
+			<div id="resultView" class="mt50 mb40">
 			<div class="logo_div mb20">
 				<div style="width: 350px; display: inline-block;" align="left">
 					<img src="images/lotto_logo.png" width="300px;">
@@ -346,6 +345,56 @@
 	</div>	
 </div>
 <!-- POP UP END -->
+
+<!-- PRINT VIEW START -->
+<div id="print" style="width: 300px; display: none;">
+<div style="border: 1px solid black; padding: 20px; width: 280px;">
+<div class="logo_div mb20">
+	<div style="width: 150px; display: inline-block;" align="left">
+		<img src="images/lotto_logo.png" width="100px;">
+	</div>
+	<div align="right" style="width: 100px; display: inline-block;">
+		<img src="images/qr.png" height="40px;">
+	</div>
+</div>
+
+<div align="left">
+	<p>
+		<label style="letter-spacing: 0.45em;">발행일</label>
+		<label class="mr20">:</label>
+		<label id="p_day_issue"></label>
+	</p>
+	<p>
+		<label style="letter-spacing: 0.45em;">추첨일</label>
+		<label class="mr20">:</label>
+		<label id="p_day_lottery"></label>
+	</p>
+	<p>
+		<label >지급기한</label>
+		<label class="mr20">:</label>
+		<label id="p_day_limit"></label>
+	</p>
+</div>
+
+<div>
+	<span>---------------------------------------</span>
+	<table>
+		<colgroup>
+			<col width="50px">
+			<col width="*">
+		</colgroup>
+		<tbody class="center" id="printLottoTb">
+		</tbody>
+	</table>
+	<span>---------------------------------------</span>
+</div>
+<div style="width: 300px;">
+	<div align="left" style="width: 130px; display: inline-block;">금액</div>
+	<div align="right" style="width: 120px; display: inline-block;" id="p_howMuch"></div>
+	</div>
+</div>
+</div>
+<!-- PRINT VIEW END -->
 
 <!-- footer -->
 <nav>	
