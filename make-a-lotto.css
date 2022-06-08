@@ -1,6 +1,6 @@
 /*css*/
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 *{font-family: 'Noto Sans KR', sans-serif;}
 
@@ -781,80 +781,32 @@
 
 /* line 68, src/assets/style/layout/login.scss */ .app .member .find-result b { color: #3158b5; }
 
-.nbrDiv label{
-	font-size: 25px;
-}
+/* Park Kyung Min custom */
 
-.lotto_ball {
-	width: 120px;
-	height: 120px;
-	border-radius: 60px;
-	float: left;
-	text-align: center;
-	margin-left: 5px;
-	padding-top : 18px;
-	text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%);
-	font-size: 80px;
-	color: white;
-}
+/* lotto ball 관련 */
+.lotto_ball { width: 120px; height: 120px; border-radius: 60px; float: left; text-align: center; margin-left: 5px; padding-top : 18px; text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%); font-size: 80px; color: white; }
+.lotto_mball { background-color: rgb(251, 196, 0); width: 65px; height: 65px; border-radius: 50px; margin-left: 10px; float: left; font-size: 40px; color: white; text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%); padding-top: 10px; }
+#ball_1 { background-color: rgb(251, 196, 0); /* 0 번대*/ }
+#ball_2 { background-color: rgb(105, 200, 242); /* 10 번대*/ }
+#ball_3 { background-color: rgb(255, 114, 114); /* 20 번대*/ }
+#ball_4 { background-color: rgb(170, 170, 170); /* 30 번대*/ }
+#ball_5 { background-color: rgb(179, 225, 52); /* 40 번대*/ }
+#ball_6 { background-color: rgb(236, 185, 224); }
 
-.lotto_mball {
-	background-color: rgb(251, 196, 0);
-	width: 65px;
-	height: 65px;						
-	border-radius: 50px;
-	margin-left: 10px;
-	float: left;																	
-	font-size: 40px;
-	color: white;
-	text-shadow: 0px 0px 3px rgba(73, 57, 0, 80%);
-	padding-top: 10px;
-}
+/* 번호 선택 div, check box, 라벨*/ 
+input[type=checkbox] { zoom: 2; }
+.nbrDiv label{ font-size: 25px; }
+label{ margin-left: 10px; }
+.nbrDiv{ text-align: center; margin-bottom: 10px; font-size: 25px; font-weight: bold; }
 
 
-#ball_1 {
-	background-color: rgb(251, 196, 0); /* 0 번대*/
-}
+/* 게임 선택 select box */
+#select_game{ width: 270px; height: 65px; font-size: 20px; font-weight: bold; }
 
-#ball_2 {
-	background-color: rgb(105, 200, 242); /* 10 번대*/
-}
+/* 번호 선택 popup */
+#day_issue, #day_lottery, #day_limit, #howMuch{ font-size: 30px; text-align: right; font-weight: bold; margin-right: 25px; }
+#selectTalbeDiv{ margin-top: 60px; padding-left: 30px; }
 
-#ball_3 {
-	background-color: rgb(255, 114, 114); /* 20 번대*/
-}
-
-#ball_4 {
-	background-color: rgb(170, 170, 170); /* 30 번대*/
-}
-
-#ball_5 {
-	background-color: rgb(179, 225, 52); /* 40 번대*/
-}
-
-#ball_6 {
-	background-color: rgb(236, 185, 224);
-}
-
-input[type=checkbox] {
-zoom: 2;
-}
-
-label{
-	margin-left: 10px;
-}
-
-.nbrDiv{
-	text-align: center;
-	margin-bottom: 10px;
-	font-size: 25px;
-	font-weight: bold;
-}
-
-
-#day_issue, #day_lottery, #day_limit, #howMuch{
-	font-size: 30px;
-	text-align: right;
-	font-weight: bold;
-}
-
+/* footer */
+[name=i_footer]{ color: gray; font-size: 40px; }
+[name=i_name]{ font-weight: bold; font-size: 18px; }

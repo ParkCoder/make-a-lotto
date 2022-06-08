@@ -24,9 +24,9 @@
 <!-- 헤더 start -->
 	<header>
 		<div class="flex flex-align-center flex-justify-between">
-			<h1><a href="javascript:location.reload()">&ensp;MAKE A LOTTO.</a></h1>
-			<div class="right-wrap flex flex-align-center">
-				<select id="select_game" onchange="fn_change()" style="width: 270px; height: 65px; font-size: 20px; font-weight: bold;">
+			<h1><a href="javascript:location.reload()" class="ml25">MAKE A LOTTO.</a></h1>
+			<div class="right-wrap flex flex-align-center mr25">
+				<select id="select_game" onchange="fn_change()">
 					<option value="1">1 GAME (￦ 1,000)</option>
 					<option value="2">2 GAME (￦ 2,000)</option>
 					<option value="3">3 GAME (￦ 3,000)</option>
@@ -75,12 +75,12 @@
 			<br><br>
 			<h1 id="ment">아래 버튼을 눌러 번호를 생성하세요!</h1>
 			<br><br>
-			<button type="button" id="btn_1" class="btn" onclick="fn_lotto()" style="height: 70px; width: 360px; font-size: 23px; font-weight: bold;">번호 생성 하기 </button>
+			<button type="button" id="createBtn" class="btn" onclick="fn_lotto()" style="height: 70px; width: 360px; font-size: 23px; font-weight: bold;">번호 생성 하기 </button>
 		</div>
 		<div style="width: 100%; text-align: center;">
 			<br>
-			<button type="button" id="btn_1" class="btn btn-black"	onclick="fn_nbr_pop('fixNbr')" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">고정 번호</button>
-			<button type="button" id="btn_2" class="btn btn-cancel"	onclick="fn_nbr_pop('exclsNbr')" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">제외 번호</button>
+			<button type="button" id="fixNbrBtn" class="btn btn-black"	onclick="fn_nbr_pop('fixNbr')" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">고정 번호</button>
+			<button type="button" id="exclsNbrBtn" class="btn btn-cancel"	onclick="fn_nbr_pop('exclsNbr')" style="height: 65px; width: 178px; font-size: 23px; font-weight: bold;">제외 번호</button>
 			<br><br>
 			<a href="#" onclick="javascript:location.reload()" class="mt30" style="font-size: 40px; color: gray; font-weight: bold;">RESET <i class="fas fa-sync"></i></a>
 		</div>
@@ -295,7 +295,7 @@
 				<p id="day_limit"></p>
 			</div>
 			
-			<div style="margin-top: 60px;">
+			<div id="selectTalbeDiv">
 				<table>
 					<colgroup>
 						<col width="100px">
@@ -337,12 +337,12 @@
 <nav>	
 	<div class="navigation">
 		<ul>
-			<li class="one-depth"><a href="mailto:kyung_za@naver.com"><i class="fas fa-question-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">문의사항</span></a></li>
-			<li class="one-depth"><a href="mailto:kyung_za@naver.com"><i class="fas fa-exclamation-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">오류신고</span></a></li>
-			<li class="one-depth"><a href="https://www.youtube.com/watch?v=6Pxf6H36S94"><i class="fas fa-times-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">불만사항</span></a></li>
-			<li class="one-depth"><a href="https://www.dhlottery.co.kr/"><i class="fas fa-play-circle" style="color: gray; font-size: 25px;"></i><span class="name" style="font-weight: bold;">동행복권 홈페이지</span></a></li>
+			<li class="one-depth"><a href="mailto:kyung_za@naver.com"><i class="fas fa-question-circle" name="i_footer"></i><span class="name" name="i_name">문의사항</span></a></li>
+			<li class="one-depth"><a href="mailto:kyung_za@naver.com"><i class="fas fa-exclamation-circle" name="i_footer" ></i><span class="name" name="i_name">오류신고</span></a></li>
+			<li class="one-depth"><a href="https://www.youtube.com/watch?v=6Pxf6H36S94"><i class="fas fa-times-circle" name="i_footer"></i><span class="name" name="i_name">불만사항</span></a></li>
+			<li class="one-depth"><a href="https://www.dhlottery.co.kr/"><i class="fas fa-play-circle" name="i_footer"></i><span class="name" name="i_name">동행복권 홈페이지</span></a></li>
 		</ul>
-		<p class="mt5" align="right" style="font-size: 10px;">COPYRIGHT © 2021 Park Kyung Min. ALL RIGHT RESERVED</p>
+		<p class="mt25" align="right" style="font-size: 10px;">COPYRIGHT © 2021 Park Kyung Min. ALL RIGHT RESERVED</p>
 	</div>
 </nav>
 
