@@ -25,6 +25,9 @@ let selectTableHtml = '';
 //복사할 텍스트
 let copytext = '';
 
+// 요일 배열
+let weekday = ['(일)','(월)','(화)','(수)','(목)','(금)','(토)'];
+
 
 window.onload = function() {
 	/* console copy right */
@@ -554,17 +557,17 @@ function fn_game() {
 	
 	//선택번호 확인 팝업 테이블
 	selectTableHtml += '<tr>';
-	selectTableHtml += '<td><h1>' + games + '</h1></td>';
-	selectTableHtml += '<td colspan="3"><h1>'
+	selectTableHtml += '<td><span>' + games + '</span></td>';
+	selectTableHtml += '<td>'
 	for (let i = 0; i < numbers.length; i++) {
 
 		lotto_num = numbers[i];
 		cnt = i + 1;
 
-		selectTableHtml += numbers[i] + '&ensp; ';
+		selectTableHtml += '<span class="wd80" style="display:inline-block;">' + ('0' + numbers[i]).slice(-2) + '</span>';
 
 	}
-	selectTableHtml += '</h1></td></tr>';
+	selectTableHtml += '</td></tr>';
 	
 	//복사할 번호 text
 	copytext += '' + games + ' : ';
@@ -620,20 +623,25 @@ function fn_select() {
 	let now = new Date();
 	let nowDayOfWeek = now.getDay();
 	let nowDay = now.getDate();
-	let nowMonth = now.getMonth()+1;
+	let nowMonth = ('0' + (now.getMonth() + 1)).slice(-2);
 	let nowYear = now.getYear();
+	let hours = ('0' + now.getHours()).slice(-2); 
+	let minutes = ('0' + now.getMinutes()).slice(-2);
+	let seconds = ('0' + now.getSeconds()).slice(-2); 
 	
-	let thisWeekSaturday = now.getFullYear()+ "/" +nowMonth + "/" + (nowDay + (6 - nowDayOfWeek)); 
-	let lastday = (now.getFullYear()+1)+ "/" +nowMonth + "/" + (nowDay + (6 - nowDayOfWeek) + 1); 
-	let today = now.getFullYear() + "/" +nowMonth + "/" + nowDay;
 	
-	document.getElementById("day_issue").innerText = "발 행 일 : " + today;
-	document.getElementById("day_lottery").innerText = "추 첨 일 : " + thisWeekSaturday;
-	document.getElementById("day_limit").innerText = "지급기한 : " + lastday;
+	let thisWeekSaturday = now.getFullYear()+ "/" +nowMonth + "/" + ('0' + (nowDay + (6 - nowDayOfWeek))).slice(-2); // 추첨일 (해당 주 토요일)
+	let lastday = (now.getFullYear()+1)+ "/" +nowMonth + "/" + ('0' + (nowDay + (6 - nowDayOfWeek) + 1)).slice(-2);  // 지급기간 (추첨 1년 뒤)
+	let today = now.getFullYear() + "/" +nowMonth + "/" + ('0' + nowDay).slice(-2);									 // 발행일
+	let resultTime = hours + ':' + minutes  + ':' + seconds;
+	
+	document.getElementById("day_issue").innerText = today + " " + weekday[nowDayOfWeek] + " " + resultTime;
+	document.getElementById("day_lottery").innerText = thisWeekSaturday + " " +weekday[6];
+	document.getElementById("day_limit").innerText = lastday;
 	
 	let game_cnt = document.getElementById("select_game").value;
 	
-	document.getElementById("howMuch").innerText = "합계 : " + game_cnt + ",000 원";
+	document.getElementById("howMuch").innerText = "￦ " + game_cnt + ",000";
 	document.getElementById("selectLotto").style.display ="block";
 }
 
@@ -667,7 +675,7 @@ function printDiv()	{
 	  let divToPrint=document.getElementById('print');
 	  let newWin=window.open('','Print-Window');
 	  newWin.document.open();
-	  newWin.document.write('<html><body onload="window.print()" style="width:800px;">'+divToPrint.innerHTML+'</body></html>');
+	  newWin.document.write('<html><body onload="window.print()" style="width:700px;">'+divToPrint.innerHTML+'</body></html>');
 	  newWin.document.close();
 	  setTimeout(function(){newWin.close();},10);
 }

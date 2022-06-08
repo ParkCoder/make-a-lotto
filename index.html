@@ -288,34 +288,48 @@
 		 <div class="flex flex-justify-end"></div>
          <div class="modal-title">LOTTO 번호 선택</div>
 		<div class="modal-cont">
-			<div id="print">
-			<div align="right">
-				<p id="day_issue"></p>
-				<p id="day_lottery"></p>
-				<p id="day_limit"></p>
+			<div id="print" class="mt50 mb40">
+			<div class="logo_div mb20">
+				<div style="width: 350px; display: inline-block;" align="left">
+					<img src="images/lotto_logo.png" width="300px;">
+				</div>
+				<div align="right" style="width: 350px; display: inline-block;">
+					<img src="images/qr.png" height="118px;">
+				</div>
+			</div>
+			<div align="left">
+				<p>
+					<label name="dayTag" style="letter-spacing: 0.45em;">발행일</label>
+					<label name="dot" class="mr20">:</label>
+					<label id="day_issue"></label>
+				</p>
+				<p>
+					<label name="dayTag" style="letter-spacing: 0.45em;">추첨일</label>
+					<label name="dot" class="mr20">:</label>
+					<label id="day_lottery"></label>
+				</p>
+				<p>
+					<label name="dayTag">지급기한</label>
+					<label name="dot" class="mr20">:</label>
+					<label id="day_limit"></label>
+				</p>
 			</div>
 			
 			<div id="selectTalbeDiv">
+				<span>-----------------------------------------------------------</span>
 				<table>
 					<colgroup>
-						<col width="100px">
-						<col width="*">
-						<col width="450px">
+						<col width="150px">
 						<col width="*">
 					</colgroup>
 					<tbody class="center" id="selectLottoTable">
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
 					</tbody>
 				</table>
+				<span>-----------------------------------------------------------</span>
 		</div>
-			<div align="right">
-				<br><br>
-				<p id="howMuch"></p>
+			<div id="paymentZone">
+				<div id="pay" align="left" class="pl25">금액</div>
+				<div id="howMuch" align="right"></div>
 				</div>
 			</div>
 			<div id="copyzone">
