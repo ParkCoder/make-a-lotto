@@ -83,173 +83,122 @@ function exclsNbrClick() {
 }
 
 /*
- * 	고정 번호 팝업 관련 function 
+ * 	고정 번호, 제외번호 팝업 관련 공통 function 
  * 
  * */
 
-// 고정번호 팝업
-function fn_fixNbr_pop() {
- 	fixNbr_arr = [];
- 	
- 	//제외번호 선택한게 있으면 checkbox disabled
- 	let fixNbrAll = document.querySelectorAll("[name='fixNbr']");
- 	let fixNbrLength = fixNbrAll.length;
- 	
-	let exclsArrlength = excls_arr.length;	//제외 번호 length
-
-	if(exclsArrlength != 0){
-		for (let i = 1; i <= fixNbrLength; i++) {
-			
-			for (let j = 0; j < exclsArrlength; j++) {
-				
-				let fixNbrId = document.getElementById("fixNbr" + i);
-				
-				if(fixNbrId.value == excls_arr[j]){
-					
-					fixNbrId.disabled = true;
-				}
-			}	
-		}
+/* 고정,제외번호 팝업 open */
+function fn_nbr_pop(obj) {
+	
+	let arrLength;
+	let arry;
+	
+	if(obj == 'fixNbr'){
+		fixNbr_arr = [];
+		arry = excls_arr;
+		arrLength = excls_arr.length;
 	}else{
-		fixNbrAll.forEach((checkbox) => {
-		    checkbox.disabled = false;
-		})
-	}
- 	
-	document.getElementById("fixNbrPop").style.display ="block";
-}
-
-
-// 고정번호 취소
-function fn_cancel_fixNbr() {
-	const checkedLength = document.querySelectorAll("[name='fixNbr']:checked").length //고정번호 checked length
-	
-	if(checkedLength > 0){
-		
-		if ( !confirm('선택된 고정번호가 해제됩니다!\n취소하시겠습니까?') ) return false;
+		excls_arr = [];
+		arry = fixNbr_arr;
+		arrLength = fixNbr_arr.length;
 	}
 	
-	let fixNbrAll = document.querySelectorAll("[name='fixNbr']");
-	fixNbrAll.forEach((checkbox) => {
-	    checkbox.checked = false;
-	})
-	
-	fixNbr_arr = [];
-	
-	document.getElementById("fixNbrDiv").innerHTML = "";
-	document.getElementById("fixNbrPop").style.display ="none";
-}
-
-
-// 고정번호 선택
-function fn_select_fixNbr(){
-	
-	const checked_fixNbr = document.querySelectorAll("[name='fixNbr']:checked");
-	
-	if(checked_fixNbr.length == 0){
-		fn_cancel_fixNbr();
-		return false;
-	}
-	
-	for (let checked of checked_fixNbr) {
-		let val = checked.value;
-		fixNbr_arr.push(val);
-	}
-	
-	fixNbr_arr.sort(function(a, b) {
-		return a - b;
-	});
-	
-	let html = '<br><h1><i class="fas fa-check-circle"></i>   ' + fixNbr_arr + '</h1>';
-	
-	document.getElementById("fixNbrDiv").innerHTML = html;
-	document.getElementById("fixNbrPop").style.display ="none";
-}
-
-
-/*
- * 	제외 번호 팝업 관련 function 
- * 
- * */
-
-// 제외번호 팝업
-function fn_exclsNbr_pop() {
-	excls_arr = [];
-	
-	// 고정번호 선택한게 있으면 checkbox disabled
-	let exclsNbrAll = document.querySelectorAll("[name='exclsNbr']");
-	let exclsNbrLength = exclsNbrAll.length;
+	let nbrAll = document.querySelectorAll("[name='"+obj+"']");
+	let nbrLength = nbrAll.length;
 	
 	let fixNbrArrlength = fixNbr_arr.length;
 	
-	if(fixNbrArrlength != 0){
-		for (let i = 1; i <= exclsNbrLength; i++) {
+	if(arrLength != 0){
+		for (let i = 1; i <= nbrLength; i++) {
 			
-			for (let j = 0; j < fixNbrArrlength; j++) {
+			for (let j = 0; j < arrLength; j++) {
 				
-				let exclsNbrId = document.getElementById("exclsNbr" + i);
+				let nbrId = document.getElementById(obj + i);
 				
-				if(exclsNbrId.value == fixNbr_arr[j]){
+				if(nbrId.value == arry[j]){
 					
-					exclsNbrId.disabled = true;
+					nbrId.disabled = true;
 				}
 			}	
 		}
 	}else{
 		
-		exclsNbrAll.forEach((checkbox) => {
+		nbrAll.forEach((checkbox) => {
 		    checkbox.disabled = false;
 		})
 	}
 	
-	document.getElementById("exclsNbrPop").style.display ="block";
+	document.getElementById(obj+"Pop").style.display ="block";
 }
 
-// 제외번호 취소
-function fn_cancel_exclsNbr() {
+/* 고정, 제외번호 팝업 취소 button*/
+function fn_cancel_nbr(obj) {
 	
-	const checkedLength = document.querySelectorAll("[name='exclsNbr']:checked").length //제외번호 checked length
+	let msg;
 	
-	if(checkedLength > 0){
+	if(obj == 'fixNbr'){
+		msg = '고정번호';
+	}else{
+		msg = '제외번호';
+	}
+	
+	const checkedLength = document.querySelectorAll("[name='"+obj+"']:checked").length //고정,제외번호 checked length
+	
+	if(checkedLength > 0){	//선택된 번호가 0이 아닐경우 취소시 array 비움
 		
-		if ( !confirm('선택된 제외번호가 해제됩니다!\n취소하시겠습니까?') ) return false;
+		if ( !confirm('선택된 '+msg+'가 해제됩니다!\n취소하시겠습니까?') ) return false;
 	}
 	
 	
-	let exclsNbrAll = document.querySelectorAll("[name='exclsNbr']");
-	exclsNbrAll.forEach((checkbox) => {
+	let nbrAll = document.querySelectorAll("[name='"+obj+"']");
+	nbrAll.forEach((checkbox) => {
 	    checkbox.checked = false;
 	})
 	
-	excls_arr = [];
+	if(obj == 'fixNbr'){
+		fixNbr_arr = [];
+	}else{
+		excls_arr = [];
+	}
 	
-	document.getElementById("exclsNbrDiv").innerHTML = "";
-	document.getElementById("exclsNbrPop").style.display ="none";
+	document.getElementById(obj+"Div").innerHTML = "";
+	document.getElementById(obj+"Pop").style.display ="none";
 }
 
-// 제외번호 선택
-function fn_select_exclsNbr(){
+/* 고정, 제외번호 팝업 선택 button */
+function fn_select_nbr(obj){
 	
-	const checked_exclsNbr = document.querySelectorAll("[name='exclsNbr']:checked");
+	let arry;
+	let i_class;
 	
-	if(checked_exclsNbr.length == 0){
-		fn_cancel_exclsNbr();
+	if(obj == 'fixNbr'){
+		arry = fixNbr_arr;
+		i_class = 'fas fa-check-circle';
+	}else{
+		arry = excls_arr;
+		i_class = 'fas fa-times-circle';
+	}
+	
+	const checked_nbr = document.querySelectorAll("[name='"+obj+"']:checked");
+	
+	if(checked_nbr.length == 0){
+		fn_cancel_nbr(obj);
 		return false;
 	}
 	
-	for (let checked of checked_exclsNbr) {
+	for (let checked of checked_nbr) {
 		let val = checked.value;
-		excls_arr.push(val);
+		arry.push(val);
 	}
 	
-	excls_arr.sort(function(a, b) {
+	arry.sort(function(a, b) {
 		return a - b;
 	});
 	
-	let html = '<br><h1><i class="fas fa-times-circle"></i>   ' + excls_arr + '</h1>';
+	let html = '<br><h1><i class="'+ i_class +'"></i>&ensp;' + arry + '</h1>';
 	
-	document.getElementById("exclsNbrDiv").innerHTML = html;
-	document.getElementById("exclsNbrPop").style.display ="none";
+	document.getElementById(obj + "Div").innerHTML = html;
+	document.getElementById(obj + "Pop").style.display ="none";
 }
 
 
