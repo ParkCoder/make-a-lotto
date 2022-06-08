@@ -695,7 +695,7 @@ function printDiv()	{
 	  let divToPrint=document.getElementById('print');
 	  let newWin=window.open('','Print-Window');
 	  newWin.document.open();
-	  newWin.document.write('<html><body onload="window.print()" style="width:700px;">'+divToPrint.innerHTML+'</body></html>');
+	  newWin.document.write('<html><title>Lotto Print</title><body onload="window.print()" style="width:700px;">'+divToPrint.innerHTML+'</body></html>');
 	  newWin.document.close();
 	  setTimeout(function(){newWin.close();},10);
 }
