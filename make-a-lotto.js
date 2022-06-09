@@ -37,10 +37,10 @@ window.onload = function() {
 	console.log('COPYRIGHT © 2021 Park Kyung Min. ALL RIGHT RESERVED');
 	
 	/* check box show */
-	const checkBoxs  = document.querySelectorAll("[type='checkbox']");
-	for (let checkBox of checkBoxs) {
-		checkBox.style.display ="inline-block";
-	}
+//	const checkBoxs  = document.querySelectorAll("[type='checkbox']");
+//	for (let checkBox of checkBoxs) {
+//		checkBox.style.display ="inline-block";
+//	}
 	
 	/* 복사되는 copyzone display none */
 	const copyzone = document.getElementById("copyzone");
