@@ -47,7 +47,6 @@ window.onload = function() {
 	copyzone.style.display ="none";
 	
 	
-	
 	/* 고정숫자 (fixNbr) click function */
 	let fixNbrs = document.querySelectorAll("[name='fixNbr']");
 	for (let fixNbr of fixNbrs) {
@@ -332,7 +331,7 @@ function fn_select_comment() {
 	let comment_index = Math.floor(Math.random() * 40);
 	
 	let ment = document.getElementById("ment");
-	ment.innerText = comments[comment_index];
+	ment.innerHTML = comments[comment_index];
 }
 
 /* 로또 번호 생성 */
@@ -575,7 +574,7 @@ function fn_game() {
 		lotto_num = numbers[i];
 		cnt = i + 1;
 
-		printTableHtml += '<span class="wd80" style="display:inline-block;">' + ('0' + numbers[i]).slice(-2) + '&emsp;</span>';
+		printTableHtml += '<span style="display:inline-block; width:41px;">' + ('0' + numbers[i]).slice(-2) + '</span>';
 
 	}
 	printTableHtml += '</td></tr>';
@@ -691,11 +690,13 @@ function copyNumber() {
 }
 
 /* 인쇄 */
-function printDiv()	{
-	  let divToPrint=document.getElementById('print');
-	  let newWin=window.open('','Print-Window');
-	  newWin.document.open();
-	  newWin.document.write('<html><title>Lotto Print</title><body onload="window.print()" style="width:700px;">'+divToPrint.innerHTML+'</body></html>');
-	  newWin.document.close();
-	  setTimeout(function(){newWin.close();},10);
+function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
 }
