@@ -58,39 +58,6 @@ window.onload = function() {
 	for (let exclsNbr of exclsNbrs) {
 		exclsNbr.addEventListener('click', exclsNbrClick); 
 	}
-
-	const agent = window.navigator.userAgent.toLowerCase();
-	let browserName;
-	
-	switch(true){
-		case agent.indexOf("edge") > -1:
-			browserName = "MS Edge";
-			break;
-		case agent.indexOf("edg/") > -1:
-			browserName = "Edge(chromium based)";
-			break;
-		
-		case agent.indexOf("opr") > -1:
-			browserName = "Opera";
-			break;
-		
-		case agent.indexOf("trident") > -1:
-			browserName = "MS IE";
-			break;
-		
-		case agent.indexOf("firefox") > -1:
-			browserName = "firefox";
-			break;
-		
-		case agent.indexOf("safari") > -1:
-			browserName = "safari";
-			break;
-	
-		default :
-			browserName = "other";
-	}
-	
-	alert(browserName);
 	
 }
 
