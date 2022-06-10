@@ -690,20 +690,13 @@ function copyNumber() {
 }
 
 /* 인쇄 */
-let initHtml;
+function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
 
-function printDiv() {
-	window.print();
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
 }
-
-function beforePrint() {
-	initHtml = document.body.innerHTML;
-	document.body.innerHTML = document.getElementById('print').innerHTML;
-}
-
-function afterPrint() {
-	document.body.innerHTML = initHtml;
-}
-
-window.onbeforeprint = beforePrint;
-window.onafterprint = afterPrint;
