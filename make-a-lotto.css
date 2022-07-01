@@ -814,7 +814,7 @@ input[type=checkbox] { zoom: 2;}
 
 /* footer */
 [name=i_footer]{ color: gray; font-size: 40px; }
-[name=i_name]{ font-weight: bold; font-size: 18px; }
+[name=i_name]{ font-weight: bold; font-size: 25px; color: black !important;}
 
 /* reset btn */
 #re-btn{width: 40px; vertical-align:middle; margin-bottom: 5px;}
@@ -822,3 +822,6 @@ input[type=checkbox] { zoom: 2;}
 
 /* result img*/
 .result-img{width: 80px; margin-right: 15px;}
+
+/* main icons */
+.ico-main{width: 60px;}
