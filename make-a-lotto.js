@@ -175,13 +175,14 @@ function fn_select_nbr(obj){
 	
 	let arry;
 	let i_class;
+	let src;
 	
 	if(obj == 'fixNbr'){
 		arry = fixNbr_arr;
-		i_class = 'fas fa-check-circle';
+		src = 'images/icons/tick.png"';
 	}else{
 		arry = excls_arr;
-		i_class = 'fas fa-times-circle';
+		src = 'images/icons/cancel.png';
 	}
 	
 	const checked_nbr = document.querySelectorAll("[name='"+obj+"']:checked");
@@ -200,7 +201,7 @@ function fn_select_nbr(obj){
 		return a - b;
 	});
 	
-	let html = '<br><h1><i class="'+ i_class +'"></i>&ensp;' + arry + '</h1>';
+	let html = '<h1><img src="' + src + '" style="width:25px;">&ensp;' + arry + '</h1>';
 	
 	document.getElementById(obj + "Div").innerHTML = html;
 	document.getElementById(obj + "Pop").style.display ="none";
@@ -285,53 +286,40 @@ function fn_lotto() {
 function fn_select_comment() {
 	
 	let comments = [
-		'다시하세요 😫',
-		'다시...🤦🏻‍♂️',
-		'이건 안될것같아요..🤦🏻‍♀️',
-		'🤦🏻‍♂️🤦🏻‍♀️🤦🏼‍♂️🤦🏼‍♀️🤦🏾‍♀️🤦🏾‍♂️',
-		'🤦🏻‍♂️🤦🏻‍♀️🤦🏼‍♂️🤦🏼‍♀️🤦🏾‍♀️🤦🏾‍♂️',
-		'🥇 1등 각이다 🥇',
-		'다시..🤦‍♂️',
-		'다시 눌러봅시다!!👏🏻',
-		'다시 돌립시다...🤦🏼‍♂️',
-		'실패!!🧨🧨🧨',
-		'☠☠☠☠☠☠',
-		'.....💬',
-		'💰💰💰💰이거다!!💰💰💰💰',
-		'2등정도..?🥈',
-		'이건 안되겠다🤬🤬',
-		'실패!!🧨🧨🧨',
-		'다시하세요 😫',
-		'❌❌❌❌❌❌❌❌',
-		'다른번호..😨😨😨',
-		'안될거같아💦💦',
-		'.....💬',
-		'💀💀다시💀💀',
-		'💸💸💸이거다💸💸💸',
-		'꽝💣💣',
-		'다시하세요 😫',
-		'🤑돈들어 오는게 보인다🤑',
-		'💰당💰첨💰된💰다💰',
-		'꽝💣💣',
-		'제발..다시..🙏🏻',
-		'❌❌❌❌❌❌❌❌',
-		'🤦🏻‍♂️🤦🏻‍♀️🤦🏼‍♂️🤦🏼‍♀️🤦🏾‍♀️🤦🏾‍♂️',
-		'.....💬',
-		'💣💣꽝💣💣',
-		'이 번호로 가자! 💴💵💶',
-		'💀💀다시💀💀',
-		'........👎🏽',
-		'느낌이 좋아요 🤩🤩',
-		'🥇🏆👑💎💍💰💴💵💶💸💳🏧',
-		'이건안된다..😭😰',
-		'다른번호..😨😨😨',
-		'🥇🥇🥇🥇🥇🥇🥇🥇🥇🥇'
-		]; // 41개
+		'1st1' ,'1st2' ,'1st3'													// 3개 good
+		,'2nd1' ,'2nd2'															// 2개 good
+		,'dallor-coin'															// 1개 good
+		,'jew-dia'																// 1개 good
+		,'money1', 'money2', 'money3', 'money4', 'money5', 'money6', 'money7'	// 7개 good
+		,'sad1', 'sad2', 'sad3', 'sad4'											// 4개 bad
+		,'sad-girl', 'sad-men'													// 2개 bad
+		,'won-coin', 'won-coins'												// 2개 good
+		,'like'																	// 1개 good
+		,'dislike1', 'dislike2'													// 2개 bad
+		,'bad1'																	// 1개 bad
+		,'sorry1' ,'sorry2' ,'sorry3'											// 3개 bad
+		,'angry1' ,'angry2' ,'angry3'											// 3개 bad
+		,'rich1','rich2' ,'rich3' ,'rich4' ,'rich5'								// 5개 good
+		,'poor1','poor2' ,'poor3' ,'poor4' ,'poor5'								// 5개 bad
+		,'winner1'																// 1개 good
+		,'skull1','skull2' ,'skull3' ,'skull4'									// 4개 bad
+		,'rip1','rip2' ,'rip3' ,'rip4'											// 4개 bad
+		,
+		]; 																		
 	
-	let comment_index = Math.floor(Math.random() * 40);
+	// good : 23개
+	// bad : 28개
+	
+	let comment_index = Math.floor(Math.random() * comments.length);
 	
 	let ment = document.getElementById("ment");
-	ment.innerHTML = comments[comment_index];
+	let result_img = '<img class="result-img" src="images/icons/'+comments[comment_index]+'.png" />';
+	
+	for (let i = 0; i < 5; i++) {
+		result_img += '<img class="result-img" src="images/icons/'+comments[comment_index]+'.png" />';
+	}
+	
+	ment.innerHTML = result_img;
 }
 
 /* 로또 번호 생성 */
