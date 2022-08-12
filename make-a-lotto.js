@@ -59,10 +59,8 @@ window.onload = function() {
 		exclsNbr.addEventListener('click', exclsNbrClick); 
 	}
 	
-	let lotto_st_date = new Date('2002-12-01');
-	console.log(displayedAt(lotto_st_date));
-	
-	
+//	let lotto_st_date = new Date('2002-12-01');
+//	console.log(displayedAt(lotto_st_date));
 	
 //	let td = new Date();
 //	let tdDayOfWeek = td.getDay();
@@ -717,7 +715,6 @@ function printDiv(divName) {
     document.body.innerHTML = originalContents;
 }
 
-let thisSat;
 function displayedAt(createdAt) {
 	  const milliSeconds = new Date() - createdAt
 	  const seconds = milliSeconds / 1000
@@ -727,4 +724,4 @@ function displayedAt(createdAt) {
 	  const weeks = days / 7
 	  
 	  return Math.floor(weeks) + '주 전'
-	}
+}
