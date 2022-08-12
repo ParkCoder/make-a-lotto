@@ -85,15 +85,6 @@ window.onload = function() {
 //	console.log(thisSatDay > nownow);
 //	console.log(nownow > thisSatDay);
 	
-	var requestURL = 'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=1027';
-	var request = new XMLHttpRequest();
-	request.open('GET', requestURL);
-	request.responseType = 'json';
-	request.send();
-	request.onload = function() {
-		console.log(request.response);
-	}
-	
 }
 
 /* 고정숫자 5개 이상 선택 X click function */
