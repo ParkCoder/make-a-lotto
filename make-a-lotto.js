@@ -59,6 +59,41 @@ window.onload = function() {
 		exclsNbr.addEventListener('click', exclsNbrClick); 
 	}
 	
+	let lotto_st_date = new Date('2002-12-01');
+	console.log(displayedAt(lotto_st_date));
+	
+	
+	
+//	let td = new Date();
+//	let tdDayOfWeek = td.getDay();
+//	let tdDay = td.getDate();
+//	let tdMonth = ('0' + (td.getMonth() + 1)).slice(-2);
+//	let thisSatDay = td.getFullYear()+ tdMonth + ('0' + (tdDay + (6 - tdDayOfWeek))).slice(-2) + '2100';
+//	console.log(thisSatDay);
+//	
+//	
+//	let td2DayOfWeek = td.getDay();
+//	let td2Day = td.getDate();
+//	let td2Month = ('0' + (td.getMonth() + 1)).slice(-2);
+//	let td2Year = td.getYear();
+//	let hours = ('0' + td.getHours()).slice(-2); 
+//	let minutes = ('0' + td.getMinutes()).slice(-2);
+//	let seconds = ('0' + td.getSeconds()).slice(-2);
+//	let nownow = td.getFullYear() + td2Month + td2Day + hours + minutes;
+//	console.log(nownow);
+//	
+//	console.log(thisSatDay > nownow);
+//	console.log(nownow > thisSatDay);
+	
+	var requestURL = 'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=1027';
+	var request = new XMLHttpRequest();
+	request.open('GET', requestURL);
+	request.responseType = 'json';
+	request.send();
+	request.onload = function() {
+		console.log(request.response);
+	}
+	
 }
 
 /* 고정숫자 5개 이상 선택 X click function */
@@ -633,6 +668,8 @@ function fn_select() {
 	let today = now.getFullYear() + "/" +nowMonth + "/" + ('0' + nowDay).slice(-2);									 // 발행일
 	let resultTime = hours + ':' + minutes  + ':' + seconds;
 	
+	thisSat = now.getFullYear()+ "-" +nowMonth + "-" + ('0' + (nowDay + (6 - nowDayOfWeek))).slice(-2)
+	
 	//show div
 	document.getElementById("day_issue").innerText = today + " " + weekday[nowDayOfWeek] + " " + resultTime;
 	document.getElementById("day_lottery").innerText = thisWeekSaturday + " " +weekday[6];
@@ -688,3 +725,15 @@ function printDiv(divName) {
 
     document.body.innerHTML = originalContents;
 }
+
+let thisSat;
+function displayedAt(createdAt) {
+	  const milliSeconds = new Date() - createdAt
+	  const seconds = milliSeconds / 1000
+	  const minutes = seconds / 60
+	  const hours = minutes / 60
+	  const days = hours / 24
+	  const weeks = days / 7
+	  
+	  return Math.floor(weeks) + '주 전'
+	}
